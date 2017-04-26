@@ -11,53 +11,52 @@
             <small>在此页面添加项目</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li class="active">项目管理</li>
+            <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="ProjectProfile.jsp">项目管理</a></li>
+            <li class="active">项目添加</li>
           </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
-          <div class="row">
+        <div class="row">
             <!-- left column -->
-            <div class="col-md-6">
+            <div class="col-md-12">
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Quick Example</h3>
+                  <h3 class="box-title">项目添加</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" method="post" action="">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                      <label for="exampleInputEmail1">项目名称</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    	<label for="exampleInputEmail1">项目类型</label>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                     	 <option selected="selected">公开</option>
+                     	 <option>私密</option>
+                   	 	</select>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputFile">File input</label>
-                      <input type="file" id="exampleInputFile">
-                      <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Check me out
-                      </label>
+                      <label for="exampleInputEmail1">项目Key</label>
+                      <input type=text disabled="disabled" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
                     </div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">创建</button>
                   </div>
                 </form>
               </div><!-- /.box -->
 
-            </div><!--/.col -->
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
+            </div>
+          </div>
+          
+          </section>
       </div>
 
       <jsp:include page="template/footer.jsp" flush="true"/><!--动态包含footer-->  
