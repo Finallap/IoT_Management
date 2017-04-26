@@ -1,4 +1,4 @@
-  <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+            <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -7,11 +7,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            项目管理
+           	 项目管理
             <small>进行项目的增加、修改、查看</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
             <li class="active">项目管理</li>
           </ol>
         </section>
@@ -36,7 +36,30 @@
                     <li><a href="#">控制器总数 <span class="pull-right badge bg-aqua">5</span></a></li>
                     <li><a href="#">已上传数据<span class="pull-right badge bg-green">12</span></a></li>
                     <li>
-                    	<a href="#" class="pull-right"><i class="fa fa-fw fa-remove"></i>删除</a>
+                    	<a href="#" class="pull-right"  data-toggle="modal" data-target="#delete-project-1"><i class="fa fa-fw fa-remove"></i>删除</a>
+                    	
+                    	
+                    	
+                     <div class="modal modal-danger"  id="delete-project-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                              <h4 class="modal-title">项目删除</h4>
+                            </div>
+                            <div class="modal-body">
+                             <p>您目前正在删除项目“xxxx”，请确定是否删除？</p>
+                            </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              <button type="button" class="btn btn-outline">删除</button>
+                            </div>
+                          </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                      </div>
+            
+            
+            
                     	<a href="#" class="pull-right"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     	<a href="#" class="pull-right"><i class="fa fa-fw fa-search"></i>查看详情</a>
                     </li>
@@ -50,13 +73,13 @@
               <div class="small-box bg-aqua">
                 <div class="inner">
                   <h3>150</h3>
-                  <p>New Orders</p>
+                  <p>项目总数</p>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-fw fa-plus"></i>
+                  <a href="NewProject.jsp"><i class="fa fa-fw fa-plus"></i></a>
                 </div>
-                <a href="#" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
+                <a href="NewProject.jsp" class="small-box-footer">
+                  	点击添加项目 <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
             </div>
