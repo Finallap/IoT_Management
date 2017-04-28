@@ -225,9 +225,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">请选择功能</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="#"><i class="fa fa-fw fa-list-alt"></i> <span>我的项目</span></a></li>
-            <li><a href="#"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span></a></li>
-            <li><a href="#"><i class="fa fa-fw fa-external-link-square"></i> <span>我的控制器</span></a></li>
+            <li><a href="ProjectProfile.jsp"><i class="fa fa-fw fa-list-alt"></i> <span>我的项目</span></a></li>
+            <li><a href="SensingDeviceProfile.jsp"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span></a></li>
+            <li><a href="ControllingDeviceProfile.jsp"><i class="fa fa-fw fa-external-link-square"></i> <span>我的控制器</span></a></li>
             <li class="active"><a href="#"><i class="fa fa-fw fa-desktop"></i> <span>我的应用</span></a></li>
             <li><a href="#"><i class="fa fa-fw fa-bell"></i> <span>告警管理</span></a></li>
             <li><a href="#"><i class="fa fa-fw fa-group"></i> <span>账号管理</span></a></li>
