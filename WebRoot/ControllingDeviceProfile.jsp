@@ -7,12 +7,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            	感应设备管理
-            <small>进行感应设备的增加、修改、查看</small>
+            	控制设备管理
+            <small>进行控制设备的增加、修改、查看</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li class="active">感应设备管理</li>
+            <li class="active">控制设备管理</li>
           </ol>
         </section>
 
@@ -23,19 +23,19 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">感应设备总表</h3>
+                  <h3 class="box-title">控制设备总表</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                     <thead>
                       <tr role="row">
                       	<th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">#</th>
-                      	<th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">传感器名称</th>
+                      	<th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">控制器名称</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">所属项目</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Mac地址</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">地点</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">数据类型总数</th>
-                      	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">数据操作</th>
+                      	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">控制操作</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">设备操作</th>
                       </tr>
                     </thead>
@@ -49,7 +49,8 @@
                         <td>三牌楼校区</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -87,7 +88,8 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -102,7 +104,8 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -117,7 +120,8 @@
                         <td>1.9</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -132,7 +136,8 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -147,7 +152,8 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -162,7 +168,8 @@
                         <td>1.7</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -177,7 +184,8 @@
                         <td>1.7</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -192,7 +200,8 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
@@ -207,7 +216,8 @@
                         <td>1</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
