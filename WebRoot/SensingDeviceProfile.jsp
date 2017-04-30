@@ -49,11 +49,11 @@
                         <td>三牌楼校区</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i>删除</a>
                     		
                     		                    		
@@ -87,11 +87,11 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="odd">
@@ -102,11 +102,11 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="even">
@@ -117,11 +117,11 @@
                         <td>1.9</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="odd">
@@ -132,11 +132,11 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="even">
@@ -147,11 +147,11 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="odd">
@@ -162,11 +162,11 @@
                         <td>1.7</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="even">
@@ -177,11 +177,11 @@
                         <td>1.7</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="odd">
@@ -192,11 +192,11 @@
                         <td>1.8</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr><tr role="row" class="even">
@@ -207,11 +207,11 @@
                         <td>1</td>
                         <td><span class="badge bg-green">3</span></td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
 						</td>
                       </tr></tbody>
