@@ -132,7 +132,40 @@
                   </div><!-- /.table-responsive -->
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix" style="display: block;">
-                  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-right">增加数据类型</a>
+                  <a href="#" class="btn btn-sm btn-info btn-flat pull-right" data-toggle="modal" data-target="#add-data-type">增加数据类型</a>
+                  
+                  
+                  
+            <div class="modal" id="add-data-type"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">创建数据类型</h4>
+                  </div>
+                  <form role="form" method="post" action="">
+                  	<div class="modal-body">
+                    	<div class="form-group">
+                      		<label for="exampleInputEmail1">项目名称</label>
+                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                    	</div>
+                    	<div class="form-group">
+                     		<label for="exampleInputEmail1">项目Key</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                  		</div>
+                  	</div><!-- /.box-body -->
+                  	<div class="modal-footer">
+                    	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    	<button type="button" class="btn btn-primary">创建</button>
+                  	</div>
+                  </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+          
+                  
+                  
+                  
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
               
