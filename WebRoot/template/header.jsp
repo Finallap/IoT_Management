@@ -232,7 +232,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="#"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="SensingDeviceProfile.jsp">传感设备概览</a></li>
-                <li><a href="#">设备数据查看</a></li>
+                <li><a href="DataView.jsp">设备数据查看</a></li>
               </ul>
             </li>
             <li class="treeview">
