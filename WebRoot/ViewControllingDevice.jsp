@@ -7,13 +7,13 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            	传感设备详情
-            <small>在此页面查看传感设备详细信息</small>
+            	控制设备详情
+            <small>在此页面查看控制设备详细信息</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="SensingDeviceProfile.jsp">传感设备管理</a></li>
-            <li class="active">传感设备详情</li>
+            <li><a href="SensingDeviceProfile.jsp">控制设备管理</a></li>
+            <li class="active">控制设备详情</li>
           </ol>
         </section>
 
@@ -26,7 +26,7 @@
               <div class="box box-primary">
                 <div class="box-body box-profile">
                   <img class="profile-user-img img-responsive img-circle" src="dist/img/user4-128x128.jpg" alt="User profile picture">
-                  <h3 class="profile-username text-center">温度传感器</h3>
+                  <h3 class="profile-username text-center">温度控制器</h3>
                   <p class="text-muted text-center">南邮气象监控</p>
 
                   <ul class="list-group list-group-unbordered">
@@ -88,7 +88,7 @@
                       <tbody>
                         <tr>
                           <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
+                          <td>温度控制器1</td>
                           <td>dfsdfsafdsfdsgfhgfjjugf</td>
                           <td>
 							<a href="#"><i class="fa fa-fw fa-upload"></i>查看导出</a>
@@ -104,7 +104,7 @@
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
+                              <h4 class="modal-title">控制器删除</h4>
                             </div>
                             <div class="modal-body">
                              <p>您目前正在删除数据类型“xxxx”，请确定是否删除？</p>
@@ -127,7 +127,7 @@
                   </div><!-- /.table-responsive -->
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix" style="display: block;">
-                  <a href="#" class="btn btn-sm btn-info btn-flat pull-right" data-toggle="modal" data-target="#add-data-type">增加数据类型</a>
+                  <a href="#" class="btn btn-sm btn-info btn-flat pull-right" data-toggle="modal" data-target="#add-data-type">增加控制项目</a>
                   
                   
                   
@@ -149,8 +149,8 @@
                       		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入数据单位">
                   		</div>
                   		<div class="form-group">
-                     		<label for="exampleInputEmail1">传感器标记</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本数据的标记">
+                     		<label for="exampleInputEmail1">控制器标记</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入控制设备对于本数据的标记">
                   		</div>
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
@@ -169,7 +169,7 @@
                   
                   <div class="tab-pane" id="timeline">
                   <div class="box-header with-border">
-                  <h3 class="box-title">传感器最近十条上传数据</h3>
+                  <h3 class="box-title">控制器最近二十条上传数据</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">

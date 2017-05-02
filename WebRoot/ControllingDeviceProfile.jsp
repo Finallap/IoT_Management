@@ -53,7 +53,7 @@
                     		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="ViewControllingDevice.jsp"><i class="fa fa-fw fa-search"></i>查看</a>
                     		<a href="EditControllingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i>删除</a>
                     		
