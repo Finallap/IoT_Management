@@ -19,66 +19,58 @@
 
         <!-- Main content -->
         <section class="content">
-          <!-- Info boxes -->
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">项目</span>
-                  <span class="info-box-number">90<small>%</small></span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">设备</span>
-                  <span class="info-box-number">41,410</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
+		<div class="row">
+            <div class="col-md-3">
 
-            <!-- fix for small devices only -->
-            <div class="clearfix visible-sm-block"></div>
+              <!-- Profile Image -->
+              <div class="box box-primary">
+                <div class="box-body box-profile">
+                  <img class="profile-user-img img-responsive img-circle" src="dist/img/user4-128x128.jpg" alt="User profile picture">
+                  <h3 class="profile-username text-center">温度传感器</h3>
+                  <p class="text-muted text-center">南邮气象监控</p>
 
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">应用</span>
-                  <span class="info-box-number">760</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">添加项目</span>
-                  <span class="info-box-number">2,000</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+                  <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                      <b>MAC地址</b> <a class="pull-right">ds-sd-sd-sds-sds-sd</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>使用协议</b> <a class="pull-right">HTTP</a>
+                    </li>
+                  </ul>
 
-          <!-- Main row -->
-          <div class="row">
-            <!-- Left col -->
-            <div class="col-md-8">
-              <!-- MAP & BOX PANE -->
+                  <a href="EditSensingDevice.jsp" class="btn btn-primary btn-block"><b>编辑</b></a>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
 
-              <!-- TABLE: LATEST ORDERS -->
-              <div class="box box-info">
+              <!-- About Me Box -->
+              <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">数据类型列表</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
+                  <h3 class="box-title">关于此设备</h3>
                 </div><!-- /.box-header -->
-                <div class="box-body" style="display: block;">
+                <div class="box-body">
+                  
+				  <strong><i class="fa fa-map-marker margin-r-5"></i>放置地点</strong>
+                  <p class="text-muted">三牌楼校区</p>
+                  
+                  <hr>
+
+                  <strong><i class="fa fa-book margin-r-5"></i>设备描述</strong>
+                  <p class="text-muted">
+                    	这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述
+                  </p>
+                  
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+            <div class="col-md-9">
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">数据类型</a></li>
+                  <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">最近数据</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="activity">
+                  <div class="box-body" style="display: block;">
                   <div class="table-responsive">
                     <table class="table no-margin">
                       <thead>
@@ -146,12 +138,16 @@
                   <form role="form" method="post" action="">
                   	<div class="modal-body">
                     	<div class="form-group">
-                      		<label for="exampleInputEmail1">项目名称</label>
-                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      		<label for="exampleInputEmail1">数据类型名称</label>
+                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入数据类型名称">
                     	</div>
                     	<div class="form-group">
-                     		<label for="exampleInputEmail1">项目Key</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                     		<label for="exampleInputEmail1">数据单位</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入数据单位">
+                  		</div>
+                  		<div class="form-group">
+                     		<label for="exampleInputEmail1">传感器标记</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本数据的标记">
                   		</div>
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
@@ -162,19 +158,14 @@
                 </div><!-- /.modal-content -->
               </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-          
-                  
-                  
+
                   
                 </div><!-- /.box-footer -->
-              </div><!-- /.box -->
-              
-            </div><!-- /.col -->
-
-            <div class="col-md-4">
-            
-              <div class="box box-info">
-                <div class="box-header with-border">
+                  </div><!-- /.tab-pane -->
+                  
+                  
+                  <div class="tab-pane" id="timeline">
+                  <div class="box-header with-border">
                   <h3 class="box-title">传感器最近十条上传数据</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -216,10 +207,13 @@
                     </tr>
                   </tbody></table>
                 </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            
+                  </div><!-- /.tab-pane -->
+                </div><!-- /.tab-content -->
+              </div><!-- /.nav-tabs-custom -->
             </div><!-- /.col -->
-          </div><!-- /.row -->
+          </div>
+          
+          <!-- Main row -->
         </section>
         
       </div>
