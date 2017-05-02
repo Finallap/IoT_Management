@@ -19,7 +19,12 @@
 
         <!-- Main content -->
         <section class="content">
-        <div class="row">
+        	<div class="alert alert-info alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-info"></i>提示：</h4>
+                    <p>"数据类型"的增加、修改、删除在项目相应的查看设备详情页！</p>
+            </div>
+            <div class="row">
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
