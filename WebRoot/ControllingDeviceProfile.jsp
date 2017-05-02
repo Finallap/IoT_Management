@@ -54,7 +54,7 @@
 						</td>
                         <td>
                     		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="EditControllingDevice.jsp"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i>删除</a>
                     		
                     		                    		
@@ -67,7 +67,7 @@
                               <h4 class="modal-title">传感器删除</h4>
                             </div>
                             <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
+                             <p>您目前正在删除控制设备“xxxx”，请确定是否删除？</p>
                             </div>
                            <div class="modal-footer">
                               <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>

@@ -60,8 +60,8 @@
             
             
             
-                    	<a href="#" class="pull-right"><i class="fa fa-fw fa-edit"></i>编辑</a>
-                    	<a href="#" class="pull-right"><i class="fa fa-fw fa-search"></i>查看详情</a>
+                    	<a href="EditProject.jsp" class="pull-right"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    	<a href="ViewProject.jsp" class="pull-right"><i class="fa fa-fw fa-search"></i>查看详情</a>
                     </li>
                   </ul>
                 </div>

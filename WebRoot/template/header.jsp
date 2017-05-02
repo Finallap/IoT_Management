@@ -173,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <li class="user-header">
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      方垣闰——普通用户
+                      	方垣闰——普通用户
                       <small>注册于2017年3月</small>
                     </p>
                   </li>
@@ -228,10 +228,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">请选择功能</li>
             <!-- Optionally, you can add icons to the links -->
             <li><a href="ProjectProfile.jsp"><i class="fa fa-fw fa-list-alt"></i> <span>我的项目</span></a></li>
-            <li><a href="SensingDeviceProfile.jsp"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span></a></li>
-            <li><a href="ControllingDeviceProfile.jsp"><i class="fa fa-fw fa-external-link-square"></i> <span>我的控制器</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-fw fa-desktop"></i> <span>我的应用</span></a></li>
-            <li><a href="#"><i class="fa fa-fw fa-bell"></i> <span>告警管理</span></a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="SensingDeviceProfile.jsp">传感设备概览</a></li>
+                <li><a href="#">设备数据查看</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-fw fa-external-link-square"></i> <span>我的控制器</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="ControllingDeviceProfile.jsp">控制设备概览</a></li>
+                <li><a href="#">控制日志查看</a></li>
+              </ul>
+            </li>
             <li><a href="#"><i class="fa fa-fw fa-group"></i> <span>账号管理</span></a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-fw fa-list-alt"></i> <span>系统介绍</span> <i class="fa fa-angle-left pull-right"></i></a>
