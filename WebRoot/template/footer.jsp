@@ -13,11 +13,10 @@
     </div><!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->
-
+    <!-- jQuery 2.1.4 -->
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- ChartJS 1.0.1 -->
     <script src="plugins/chartjs/Chart.min.js"></script>
-        <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Select2 -->
@@ -42,6 +41,8 @@
     <script src="dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <!-- jQuery UI -->
+    <script src="plugins/jQueryUI/jquery-ui.min.js"></script>
     <!-- Page script -->
     <script>
       $(function () {
