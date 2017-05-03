@@ -68,8 +68,8 @@
             <div class="col-md-9">
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">数据类型</a></li>
-                  <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">最近数据</a></li>
+                  <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">控制项目</a></li>
+                  <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">最近日志</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="activity">
@@ -79,9 +79,8 @@
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>类型名称</th>
-                          <th>单位符号</th>
-                          <th>数据</th>
+                          <th>控制项目名称</th>
+                          <th>控制项目标识</th>
                           <th>操作</th>
                         </tr>
                       </thead>
@@ -90,9 +89,6 @@
                           <td><a href="pages/examples/invoice.html">1</a></td>
                           <td>温度控制器1</td>
                           <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td>
-							<a href="#"><i class="fa fa-fw fa-upload"></i>查看导出</a>
-						  </td>
                           <td>
                     		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
                     		<a href="#" data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
@@ -104,10 +100,10 @@
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">控制器删除</h4>
+                              <h4 class="modal-title">控制项目删除</h4>
                             </div>
                             <div class="modal-body">
-                             <p>您目前正在删除数据类型“xxxx”，请确定是否删除？</p>
+                             <p>您目前正在删除控制项目“xxxx”，请确定是否删除？</p>
                             </div>
                            <div class="modal-footer">
                               <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
@@ -136,21 +132,17 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">创建数据类型</h4>
+                    <h4 class="modal-title">创建控制项目</h4>
                   </div>
                   <form role="form" method="post" action="">
                   	<div class="modal-body">
                     	<div class="form-group">
-                      		<label for="exampleInputEmail1">数据类型名称</label>
-                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入数据类型名称">
+                      		<label for="exampleInputEmail1">控制项目名称</label>
+                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制项目名称">
                     	</div>
                     	<div class="form-group">
-                     		<label for="exampleInputEmail1">数据单位</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入数据单位">
-                  		</div>
-                  		<div class="form-group">
-                     		<label for="exampleInputEmail1">控制器标记</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入控制设备对于本数据的标记">
+                     		<label for="exampleInputEmail1">控制项目标识</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入控制项目标识">
                   		</div>
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
@@ -169,7 +161,7 @@
                   
                   <div class="tab-pane" id="timeline">
                   <div class="box-header with-border">
-                  <h3 class="box-title">控制器最近二十条上传数据</h3>
+                  <h3 class="box-title">控制器最近二十条控制指令</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">
