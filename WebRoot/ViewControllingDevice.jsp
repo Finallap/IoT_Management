@@ -214,20 +214,15 @@
                       <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
                     </div>
                     <div class="form-group">
-                    	<label for="exampleInputEmail1">项目类型</label>
-						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                     	 <option selected="selected">公开</option>
-                     	 <option>私密</option>
-                   	 	</select>
-                    </div>
-                    <div class="form-group">
                       <label for="exampleInputEmail1">项目Key</label>
-                      <input type=text disabled="disabled" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                      <input type=text class="form-control" id="exampleInputEmail2" placeholder="输入项目Key">
                     </div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">修改</button>
+                    <button type="submit" class="btn btn-primary">发起控制指令</button>
+                    <br><br>
+                    <label for="exampleInputEmail1">（注：若想不发起某些项控制，则相应的框空白即可。）</label>
                   </div>
                 </form>
 
