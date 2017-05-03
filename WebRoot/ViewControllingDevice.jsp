@@ -70,6 +70,7 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">控制项目</a></li>
                   <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">最近日志</a></li>
+                  <li class=""><a href="#control" data-toggle="tab" aria-expanded="false">发起控制</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="activity">
@@ -203,6 +204,35 @@
                   </tbody></table>
                 </div><!-- /.box-body -->
                   </div><!-- /.tab-pane -->
+                  
+                  <div class="tab-pane" id="control">
+                <!-- form start -->
+                <form role="form" method="post" action="">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">项目名称</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                    </div>
+                    <div class="form-group">
+                    	<label for="exampleInputEmail1">项目类型</label>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                     	 <option selected="selected">公开</option>
+                     	 <option>私密</option>
+                   	 	</select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">项目Key</label>
+                      <input type=text disabled="disabled" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                    </div>
+                  </div><!-- /.box-body -->
+
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">修改</button>
+                  </div>
+                </form>
+
+                  </div><!-- /.tab-pane -->
+                  
                 </div><!-- /.tab-content -->
               </div><!-- /.nav-tabs-custom -->
             </div><!-- /.col -->

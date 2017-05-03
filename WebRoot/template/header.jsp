@@ -190,8 +190,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="#"><i class="fa fa-fw fa-external-link-square"></i> <span>我的控制器</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="ControllingDeviceProfile.jsp">控制设备概览</a></li>
-                <li><a href="#">控制行为发起</a></li>
-                <li><a href="#">控制日志查看</a></li>
+                <li><a href="LogView.jsp">控制日志查看</a></li>
               </ul>
             </li>
             <li><a href="#"><i class="fa fa-fw fa-group"></i> <span>账号管理</span></a></li>
