@@ -116,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- The user image in the navbar-->
                   <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">方垣闰</span>
+                  <span class="hidden-xs">${username}</span>
                   <i class="fa fa-fw fa-chevron-down pull-right"></i>
                 </a>
                 <ul class="dropdown-menu">
@@ -124,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <li class="user-header">
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      	方垣闰——普通用户
+                      	${username}——普通用户
                       <small>注册于2017年3月</small>
                     </p>
                   </li>
@@ -168,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>方垣闰</p>
+              <p>${username}</p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i>在线</a>
             </div>

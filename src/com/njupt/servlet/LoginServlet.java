@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.njupt.client.CloudClient;
 
@@ -33,7 +34,12 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8"); 
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("username")!=null)
+			response.sendRedirect(request.getContextPath()+"/login.jsp");
+		else
+			response.sendRedirect(request.getContextPath()+"/index.jsp");
 	}
 
 	/**
@@ -41,18 +47,27 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8"); 
 		
-		String username=request.getParameter("username");
-		String password=request.getParameter("password");
+		String username=request.getParameter("username").trim();
+		String password=request.getParameter("password").trim();
+		
+		if(username==null||password==null){
+			out.println("<script>alert('参数为空!');location.href='login.jsp';</script>");
+		}
 		
 		String result;
-		PrintWriter out = response.getWriter();
+		
 		try {
 			result = CloudClient.getInstance().client.getPermission(username, password);
 			if (result.contains("success")) {
-				request.getRequestDispatcher("index.jsp").forward(request, response);
+//				request.getRequestDispatcher("index.jsp").forward(request, response);
+				response.sendRedirect(request.getContextPath()+"/index.jsp");
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("username", username.trim());
 			}
 			else {
 				out.println("<script>alert('用户名或密码错误!');location.href='login.jsp';</script>");

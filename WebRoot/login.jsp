@@ -28,17 +28,17 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>智慧</b>南邮</a>
+        <a href="#"><b>智慧</b>南邮</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">请输入账号和密码</p>
-        <form action="../../index2.html" method="post">
+        <form action="<%request.getContextPath();%>/IOT_Management/LoginServlet" method="post">
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="账号">
+            <input type="text" class="form-control" placeholder="账号" name="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="密码">
+            <input type="password" class="form-control" placeholder="密码" name="password">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
