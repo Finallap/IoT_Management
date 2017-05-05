@@ -28,33 +28,33 @@
   <body class="hold-transition register-page">
     <div class="register-box">
       <div class="register-logo">
-        <a href="../../index2.html"><b>智慧</b>南邮</a>
+        <a href="#"><b>智慧</b>南邮</a>
       </div>
 
       <div class="register-box-body">
         <p class="login-box-msg">注册页面</p>
-        <form action="../../index.html" method="post">
+        <form action="RegisterServlet" method="post" onSubmit="return check()">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="账号名称">
+            <input type="text" class="form-control" placeholder="账号" name="username" id="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
            <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="E-Mail">
+            <input type="email" class="form-control" placeholder="E-Mail" name="email" id="email">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>	
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="密码">
+            <input type="password" class="form-control" placeholder="密码" name="password" id="password">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="重复密码">
+            <input type="password" class="form-control" placeholder="重复密码" id="confirm_password">
             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">
                 <label>
-                  <input type="checkbox">我同意<a href="#">用户须知</a>
+                  <input type="checkbox" id="agree1">我同意<a href="#">用户须知</a>
                 </label>
               </div>
             </div><!-- /.col -->
@@ -67,6 +67,47 @@
         <a href="login.jsp" class="text-center">我已有登陆账号</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
+    
+    <script type="text/javascript"> 	
+		function check()
+		{
+            if((document.getElementById("username").value.length>16)){  
+                alert("账号不能超过16个字符"); 
+				return false;  
+            }
+            else if(document.getElementById("username").value == ""){  
+                alert("账号不能为空!"); 
+				return false;  
+            }
+            else if(document.getElementById("email").value == ""){  
+                alert("邮箱不能为空!"); 
+				return false;  
+            }
+			else if(document.getElementById("password").value == ""){  
+                alert("密码不能为空!"); 
+				return false;  
+            }
+			else if(document.getElementById("confirm_password").value == ""){  
+                alert("确认密码不能为空!"); 
+				return false;  
+            }
+			else if((document.getElementById("password").value.length<6)||(document.getElementById("password").value.length>16)){  
+                alert("密码过长或过短，请介于6-16位之间!"); 
+				return false;  
+            }
+			else if(document.getElementById("confirm_password").value != document.getElementById("password").value){  
+                alert("两次输入密码不相同!"); 
+				return false;  
+            }
+			else if(document.getElementById('agree1').checked!=1){  
+                alert("请同意注册协议!"); 
+				return false;  
+            }
+			else{ 
+               return true;
+            }  
+        }
+ </script> 
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>

@@ -48,6 +48,13 @@ public class LoginFilter implements Filter {
 		
 		HttpSession session = http_request.getSession();
 		
+		if(http_request.getRequestURI().indexOf("login.jsp")!=-1&&session.getAttribute("username")!=null)
+		{
+			http_response.sendRedirect(http_request.getContextPath()+"/index.jsp");
+			System.out.println("已经登录，跳转到首页");
+			return;
+		}
+		
 		for(int i = 0;i<ignoreRegexArray.length;i++){
 			if(ignoreRegexArray[i]==null||"".equals(ignoreRegexArray[i]))continue;
 			if(http_request.getRequestURI().indexOf(ignoreRegexArray[i])!=-1)
@@ -61,6 +68,7 @@ public class LoginFilter implements Filter {
 		if(session.getAttribute("username")==null){
 			http_response.sendRedirect(http_request.getContextPath()+"/login.jsp");
 			System.out.println(http_request.getRequestURI()+"不放行");
+			return;
 		}	
 		else
 			chain.doFilter(request, response);

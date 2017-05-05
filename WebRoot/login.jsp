@@ -32,7 +32,7 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">请输入账号和密码</p>
-        <form action="LoginServlet" method="post">
+        <form action="LoginServlet" method="post"  onSubmit="return check()">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="账号" name="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -49,7 +49,7 @@
                 </label>
               </div>
             </div><!-- /.col -->
-            <div class="col-xs-4">
+            <div class="col-xs-4 pull-right">
               <button type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
             </div><!-- /.col -->
           </div>
@@ -60,6 +60,23 @@
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
+    
+        <script type="text/javascript"> 	
+		function check()
+		{
+			if(document.getElementById("username").value == ""){  
+                alert("账号不能为空!"); 
+				return false;  
+            }
+			else if(document.getElementById("password").value == ""){  
+                alert("密码不能为空!"); 
+				return false;  
+            }
+			else{ 
+               return true;
+            }  
+        }
+ </script> 
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
