@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,8 +17,12 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(filterName="LoginFilter",urlPatterns="/*")
+@WebFilter(filterName="LoginFilter",urlPatterns="/*",
+initParams={@WebInitParam(name="ignoreRegex",value="login.jsp;register.jsp;bootstrap;build;dist;font-awesome;ionicons;plugins")})
 public class LoginFilter implements Filter {
+	
+	private String ignoreRegex;
+	private String[] ignoreRegexArray;
 
     /**
      * Default constructor. 
@@ -43,15 +48,22 @@ public class LoginFilter implements Filter {
 		
 		HttpSession session = http_request.getSession();
 		
-		if(http_request.getRequestURI().indexOf("login.jsp")!=-1)
-			chain.doFilter(request, response);
-		else
-		{
-			if(session.getAttribute("username")==null)
+		for(int i = 0;i<ignoreRegexArray.length;i++){
+			if(ignoreRegexArray[i]==null||"".equals(ignoreRegexArray[i]))continue;
+			if(http_request.getRequestURI().indexOf(ignoreRegexArray[i])!=-1)
+			{
 				chain.doFilter(request, response);
-			else
-				http_response.sendRedirect(http_request.getContextPath()+"/login.jsp");
+//				System.out.println("·ÅÐÐ");
+				return;
+			}
 		}
+
+		if(session.getAttribute("username")==null){
+			http_response.sendRedirect(http_request.getContextPath()+"/login.jsp");
+//			System.out.println("bufangxin");
+		}	
+		else
+			chain.doFilter(request, response);
 	}
 
 	/**
@@ -59,6 +71,11 @@ public class LoginFilter implements Filter {
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
+		ignoreRegex = fConfig.getInitParameter("ignoreRegex");
+		if (ignoreRegex!=null) {
+			ignoreRegexArray = ignoreRegex.split(";");
+		}
+		return;
 	}
 
 }
