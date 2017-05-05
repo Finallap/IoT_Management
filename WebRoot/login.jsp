@@ -32,7 +32,7 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">请输入账号和密码</p>
-        <form action="<%request.getContextPath();%>/IOT_Management/LoginServlet" method="post">
+        <form action="LoginServlet" method="post">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="账号" name="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>

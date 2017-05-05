@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">账号管理</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">注销</a>
+                      <a href="LogoutServlet" class="btn btn-default btn-flat">注销</a>
                     </div>
                   </li>
                 </ul>

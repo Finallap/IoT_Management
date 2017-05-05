@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
   <display-name>PutHereTheNameOfYourWebApp</display-name>
   <description>This a description of my web app made by Eclipse</description>
-   
   <welcome-file-list>
     <welcome-file>/index.jsp</welcome-file>
   </welcome-file-list>

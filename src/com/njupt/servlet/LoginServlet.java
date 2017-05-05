@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8"); 
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("username")!=null)
+		if(session.getAttribute("username")==null)
 			response.sendRedirect(request.getContextPath()+"/login.jsp");
 		else
 			response.sendRedirect(request.getContextPath()+"/index.jsp");
@@ -47,14 +47,15 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8"); 
+		response.setCharacterEncoding("GBK"); 
+		PrintWriter out = response.getWriter();
 		
 		String username=request.getParameter("username").trim();
 		String password=request.getParameter("password").trim();
 		
 		if(username==null||password==null){
+//			response.setContentType("text/html;charset=UTF-8");
 			out.println("<script>alert('²ÎÊýÎª¿Õ!');location.href='login.jsp';</script>");
 		}
 		

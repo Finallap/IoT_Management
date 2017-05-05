@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class LoginFilter
  */
 @WebFilter(filterName="LoginFilter",urlPatterns="/*",
-initParams={@WebInitParam(name="ignoreRegex",value="login.jsp;register.jsp;bootstrap;build;dist;font-awesome;ionicons;plugins")})
+initParams={@WebInitParam(name="ignoreRegex",value="LoginServlet;RegisterServlet;LogoutServlet;login.jsp;register.jsp;bootstrap;build;dist;font-awesome;ionicons;plugins")})
 public class LoginFilter implements Filter {
 	
 	private String ignoreRegex;
@@ -60,7 +60,7 @@ public class LoginFilter implements Filter {
 
 		if(session.getAttribute("username")==null){
 			http_response.sendRedirect(http_request.getContextPath()+"/login.jsp");
-//			System.out.println("bufangxin");
+			System.out.println(http_request.getRequestURI()+"²»·ÅÐÐ");
 		}	
 		else
 			chain.doFilter(request, response);
