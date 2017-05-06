@@ -71,7 +71,5 @@ public class AddProjectServlet extends HttpServlet {
 		}finally{
 			out.close();
 		}
-	
 	}
-
 }
