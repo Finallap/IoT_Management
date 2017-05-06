@@ -1,5 +1,7 @@
+  <%@ page language="java" import="java.util.*"%>  
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
- 
+ 	
+ 	
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
 
@@ -28,22 +30,22 @@
                   <h3 class="box-title">项目添加</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="">
+                <form role="form" method="post" action="AddProjectServlet"  onSubmit="return check()">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">项目名称</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      <input type=text class="form-control" placeholder="输入项目名称" name="projectname" id="projectname">
                     </div>
                     <div class="form-group">
                     	<label for="exampleInputEmail1">项目类型</label>
-						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                     	 <option selected="selected">公开</option>
-                     	 <option>私密</option>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="ispublic" id="ispublic">
+                     	 <option selected="selected" value="1">公开</option>
+                     	 <option value="1">私密</option>
                    	 	</select>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">项目Key</label>
-                      <input type=text disabled="disabled" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                      <input type=text readonly="readonly" class="form-control" placeholder="输入项目Key" name="projectkey" id="projectkey" value="<%= UUID.randomUUID().toString().trim().replaceAll("-", "")%>">
                     </div>
                   </div><!-- /.box-body -->
 
@@ -58,5 +60,41 @@
           
           </section>
       </div>
+      
+	<script type="text/javascript"> 
+		window.onload=function setProjectKey()
+		{
+			 document.getElementsByName("projectkey").value="dfsf";
+		}
+		
+    	function uuid() {
+    		var s = [];
+    		var hexDigits = "0123456789abcdef";
+    		for (var i = 0; i < 36; i++) {
+        		s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    		}
+    		s[14] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
+   			s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
+    		s[8] = s[13] = s[18] = s[23] = "-";
+ 
+    		var uuid = s.join("");
+    		return uuid;
+		}
+	
+		function check()
+		{
+            if((document.getElementById("projectname").value=="")){  
+                alert("项目名称不能为空"); 
+				return false;  
+            }
+            else if((document.getElementById("projectname").value.length>15)){  
+                alert("项目名称不能超过15个字符"); 
+				return false;  
+            }
+			else{ 
+               return true;
+            }  
+        }
+ 	</script> 
 
       <jsp:include page="template/footer.jsp" flush="true"/><!--动态包含footer-->  

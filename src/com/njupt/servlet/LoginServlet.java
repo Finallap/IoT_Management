@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
+
 import com.njupt.client.CloudClient;
 
 /**
@@ -55,7 +57,6 @@ public class LoginServlet extends HttpServlet {
 		String password=request.getParameter("password").trim();
 		
 		if(username==null||password==null){
-//			response.setContentType("text/html;charset=UTF-8");
 			out.println("<script>alert('参数为空!');location.href='login.jsp';</script>");
 		}
 		
@@ -64,11 +65,19 @@ public class LoginServlet extends HttpServlet {
 		try {
 			result = CloudClient.getInstance().client.getPermission(username, password);
 			if (result.contains("success")) {
-//				request.getRequestDispatcher("index.jsp").forward(request, response);
-				response.sendRedirect(request.getContextPath()+"/index.jsp");
-				
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username.trim());
+				
+				String jsonString = CloudClient.getInstance().client.getUserByUserName(username);
+				JSONObject jsonObject = new JSONObject(jsonString);
+				if(jsonObject.getString("status").equals("success")){
+					JSONObject userJsonObject = (JSONObject) jsonObject.get("User");
+					int userId = userJsonObject.getInt("userId");
+					session.setAttribute("userid", userId);
+				}
+				
+//				request.getRequestDispatcher("index.jsp").forward(request, response);
+				response.sendRedirect(request.getContextPath()+"/index.jsp");
 			}
 			else {
 				out.println("<script>alert('用户名或密码错误!');location.href='login.jsp';</script>");
