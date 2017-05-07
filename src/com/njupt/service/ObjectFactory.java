@@ -23,10 +23,18 @@ public class ObjectFactory {
 			"http://service.njupt.com/", "addControllingDeviceResponse");
 	private final static QName _GetUserByUserNameResponse_QNAME = new QName(
 			"http://service.njupt.com/", "getUserByUserNameResponse");
+	private final static QName _QueryUserControllingDeviceResponse_QNAME = new QName(
+			"http://service.njupt.com/", "queryUserControllingDeviceResponse");
 	private final static QName _AddProject_QNAME = new QName(
 			"http://service.njupt.com/", "addProject");
 	private final static QName _CountConfigTypeResponse_QNAME = new QName(
 			"http://service.njupt.com/", "countConfigTypeResponse");
+	private final static QName _QueryProject_QNAME = new QName(
+			"http://service.njupt.com/", "queryProject");
+	private final static QName _QueryUserSensingDeviceResponse_QNAME = new QName(
+			"http://service.njupt.com/", "queryUserSensingDeviceResponse");
+	private final static QName _QueryProjectResponse_QNAME = new QName(
+			"http://service.njupt.com/", "queryProjectResponse");
 	private final static QName _GetUserByUserName_QNAME = new QName(
 			"http://service.njupt.com/", "getUserByUserName");
 	private final static QName _GetPermissionResponse_QNAME = new QName(
@@ -45,8 +53,14 @@ public class ObjectFactory {
 			"http://service.njupt.com/", "userRegister");
 	private final static QName _AddSensingDeviceResponse_QNAME = new QName(
 			"http://service.njupt.com/", "addSensingDeviceResponse");
+	private final static QName _QueryUserControllingDevice_QNAME = new QName(
+			"http://service.njupt.com/", "queryUserControllingDevice");
+	private final static QName _DeleteConfigTypeResponse_QNAME = new QName(
+			"http://service.njupt.com/", "deleteConfigTypeResponse");
 	private final static QName _AddProjectResponse_QNAME = new QName(
 			"http://service.njupt.com/", "addProjectResponse");
+	private final static QName _DeleteConfigType_QNAME = new QName(
+			"http://service.njupt.com/", "deleteConfigType");
 	private final static QName _CountProjectResponse_QNAME = new QName(
 			"http://service.njupt.com/", "countProjectResponse");
 	private final static QName _UpdateProjectResponse_QNAME = new QName(
@@ -55,6 +69,8 @@ public class ObjectFactory {
 			"http://service.njupt.com/", "updateProject");
 	private final static QName _AddDataTypeResponse_QNAME = new QName(
 			"http://service.njupt.com/", "addDataTypeResponse");
+	private final static QName _DeleteDataType_QNAME = new QName(
+			"http://service.njupt.com/", "deleteDataType");
 	private final static QName _DeleteSensingDevice_QNAME = new QName(
 			"http://service.njupt.com/", "deleteSensingDevice");
 	private final static QName _DeleteProject_QNAME = new QName(
@@ -73,14 +89,18 @@ public class ObjectFactory {
 			"http://service.njupt.com/", "deleteControllingDeviceResponse");
 	private final static QName _AddSensingDevice_QNAME = new QName(
 			"http://service.njupt.com/", "addSensingDevice");
+	private final static QName _QueryUserSensingDevice_QNAME = new QName(
+			"http://service.njupt.com/", "queryUserSensingDevice");
 	private final static QName _DeleteSensingDeviceResponse_QNAME = new QName(
 			"http://service.njupt.com/", "deleteSensingDeviceResponse");
-	private final static QName _CountConfigType_QNAME = new QName(
-			"http://service.njupt.com/", "countConfigType");
 	private final static QName _CountUserSensingDevice_QNAME = new QName(
 			"http://service.njupt.com/", "countUserSensingDevice");
+	private final static QName _CountConfigType_QNAME = new QName(
+			"http://service.njupt.com/", "countConfigType");
 	private final static QName _CountDataType_QNAME = new QName(
 			"http://service.njupt.com/", "countDataType");
+	private final static QName _DeleteDataTypeResponse_QNAME = new QName(
+			"http://service.njupt.com/", "deleteDataTypeResponse");
 	private final static QName _CountProject_QNAME = new QName(
 			"http://service.njupt.com/", "countProject");
 	private final static QName _CountUserSensingDeviceResponse_QNAME = new QName(
@@ -97,27 +117,11 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link UpdateProject }
+	 * Create an instance of {@link DeleteControllingDevice }
 	 * 
 	 */
-	public UpdateProject createUpdateProject() {
-		return new UpdateProject();
-	}
-
-	/**
-	 * Create an instance of {@link GetPermissionResponse }
-	 * 
-	 */
-	public GetPermissionResponse createGetPermissionResponse() {
-		return new GetPermissionResponse();
-	}
-
-	/**
-	 * Create an instance of {@link CountDataType }
-	 * 
-	 */
-	public CountDataType createCountDataType() {
-		return new CountDataType();
+	public DeleteControllingDevice createDeleteControllingDevice() {
+		return new DeleteControllingDevice();
 	}
 
 	/**
@@ -129,139 +133,11 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link CountDataTypeResponse }
+	 * Create an instance of {@link AddSensingDeviceResponse }
 	 * 
 	 */
-	public CountDataTypeResponse createCountDataTypeResponse() {
-		return new CountDataTypeResponse();
-	}
-
-	/**
-	 * Create an instance of {@link GetUserByUserNameResponse }
-	 * 
-	 */
-	public GetUserByUserNameResponse createGetUserByUserNameResponse() {
-		return new GetUserByUserNameResponse();
-	}
-
-	/**
-	 * Create an instance of {@link CountUserSensingDevice }
-	 * 
-	 */
-	public CountUserSensingDevice createCountUserSensingDevice() {
-		return new CountUserSensingDevice();
-	}
-
-	/**
-	 * Create an instance of {@link AddDataTypeResponse }
-	 * 
-	 */
-	public AddDataTypeResponse createAddDataTypeResponse() {
-		return new AddDataTypeResponse();
-	}
-
-	/**
-	 * Create an instance of {@link DeleteSensingDeviceResponse }
-	 * 
-	 */
-	public DeleteSensingDeviceResponse createDeleteSensingDeviceResponse() {
-		return new DeleteSensingDeviceResponse();
-	}
-
-	/**
-	 * Create an instance of {@link AddConfigType }
-	 * 
-	 */
-	public AddConfigType createAddConfigType() {
-		return new AddConfigType();
-	}
-
-	/**
-	 * Create an instance of {@link CountConfigTypeResponse }
-	 * 
-	 */
-	public CountConfigTypeResponse createCountConfigTypeResponse() {
-		return new CountConfigTypeResponse();
-	}
-
-	/**
-	 * Create an instance of {@link AddControllingDeviceResponse }
-	 * 
-	 */
-	public AddControllingDeviceResponse createAddControllingDeviceResponse() {
-		return new AddControllingDeviceResponse();
-	}
-
-	/**
-	 * Create an instance of {@link DeleteProject }
-	 * 
-	 */
-	public DeleteProject createDeleteProject() {
-		return new DeleteProject();
-	}
-
-	/**
-	 * Create an instance of {@link DeleteControllingDevice }
-	 * 
-	 */
-	public DeleteControllingDevice createDeleteControllingDevice() {
-		return new DeleteControllingDevice();
-	}
-
-	/**
-	 * Create an instance of {@link CountConfigType }
-	 * 
-	 */
-	public CountConfigType createCountConfigType() {
-		return new CountConfigType();
-	}
-
-	/**
-	 * Create an instance of {@link AddSensingDevice }
-	 * 
-	 */
-	public AddSensingDevice createAddSensingDevice() {
-		return new AddSensingDevice();
-	}
-
-	/**
-	 * Create an instance of {@link AddConfigTypeResponse }
-	 * 
-	 */
-	public AddConfigTypeResponse createAddConfigTypeResponse() {
-		return new AddConfigTypeResponse();
-	}
-
-	/**
-	 * Create an instance of {@link CountUserControllingDeviceResponse }
-	 * 
-	 */
-	public CountUserControllingDeviceResponse createCountUserControllingDeviceResponse() {
-		return new CountUserControllingDeviceResponse();
-	}
-
-	/**
-	 * Create an instance of {@link DeleteSensingDevice }
-	 * 
-	 */
-	public DeleteSensingDevice createDeleteSensingDevice() {
-		return new DeleteSensingDevice();
-	}
-
-	/**
-	 * Create an instance of {@link AddDataType }
-	 * 
-	 */
-	public AddDataType createAddDataType() {
-		return new AddDataType();
-	}
-
-	/**
-	 * Create an instance of {@link AddProject }
-	 * 
-	 */
-	public AddProject createAddProject() {
-		return new AddProject();
+	public AddSensingDeviceResponse createAddSensingDeviceResponse() {
+		return new AddSensingDeviceResponse();
 	}
 
 	/**
@@ -273,27 +149,11 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link UpdateProjectResponse }
+	 * Create an instance of {@link DeleteControllingDeviceResponse }
 	 * 
 	 */
-	public UpdateProjectResponse createUpdateProjectResponse() {
-		return new UpdateProjectResponse();
-	}
-
-	/**
-	 * Create an instance of {@link UserRegisterResponse }
-	 * 
-	 */
-	public UserRegisterResponse createUserRegisterResponse() {
-		return new UserRegisterResponse();
-	}
-
-	/**
-	 * Create an instance of {@link CountUserSensingDeviceResponse }
-	 * 
-	 */
-	public CountUserSensingDeviceResponse createCountUserSensingDeviceResponse() {
-		return new CountUserSensingDeviceResponse();
+	public DeleteControllingDeviceResponse createDeleteControllingDeviceResponse() {
+		return new DeleteControllingDeviceResponse();
 	}
 
 	/**
@@ -305,11 +165,67 @@ public class ObjectFactory {
 	}
 
 	/**
+	 * Create an instance of {@link QueryProject }
+	 * 
+	 */
+	public QueryProject createQueryProject() {
+		return new QueryProject();
+	}
+
+	/**
+	 * Create an instance of {@link DeleteDataTypeResponse }
+	 * 
+	 */
+	public DeleteDataTypeResponse createDeleteDataTypeResponse() {
+		return new DeleteDataTypeResponse();
+	}
+
+	/**
+	 * Create an instance of {@link CountDataTypeResponse }
+	 * 
+	 */
+	public CountDataTypeResponse createCountDataTypeResponse() {
+		return new CountDataTypeResponse();
+	}
+
+	/**
+	 * Create an instance of {@link AddSensingDevice }
+	 * 
+	 */
+	public AddSensingDevice createAddSensingDevice() {
+		return new AddSensingDevice();
+	}
+
+	/**
+	 * Create an instance of {@link DeleteConfigTypeResponse }
+	 * 
+	 */
+	public DeleteConfigTypeResponse createDeleteConfigTypeResponse() {
+		return new DeleteConfigTypeResponse();
+	}
+
+	/**
 	 * Create an instance of {@link CountProject }
 	 * 
 	 */
 	public CountProject createCountProject() {
 		return new CountProject();
+	}
+
+	/**
+	 * Create an instance of {@link DeleteDataType }
+	 * 
+	 */
+	public DeleteDataType createDeleteDataType() {
+		return new DeleteDataType();
+	}
+
+	/**
+	 * Create an instance of {@link CountDataType }
+	 * 
+	 */
+	public CountDataType createCountDataType() {
+		return new CountDataType();
 	}
 
 	/**
@@ -321,11 +237,11 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link UserRegister }
+	 * Create an instance of {@link UserRegisterResponse }
 	 * 
 	 */
-	public UserRegister createUserRegister() {
-		return new UserRegister();
+	public UserRegisterResponse createUserRegisterResponse() {
+		return new UserRegisterResponse();
 	}
 
 	/**
@@ -337,19 +253,27 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link AddControllingDevice }
+	 * Create an instance of {@link QueryUserControllingDeviceResponse }
 	 * 
 	 */
-	public AddControllingDevice createAddControllingDevice() {
-		return new AddControllingDevice();
+	public QueryUserControllingDeviceResponse createQueryUserControllingDeviceResponse() {
+		return new QueryUserControllingDeviceResponse();
 	}
 
 	/**
-	 * Create an instance of {@link DeleteControllingDeviceResponse }
+	 * Create an instance of {@link GetPermissionResponse }
 	 * 
 	 */
-	public DeleteControllingDeviceResponse createDeleteControllingDeviceResponse() {
-		return new DeleteControllingDeviceResponse();
+	public GetPermissionResponse createGetPermissionResponse() {
+		return new GetPermissionResponse();
+	}
+
+	/**
+	 * Create an instance of {@link DeleteProject }
+	 * 
+	 */
+	public DeleteProject createDeleteProject() {
+		return new DeleteProject();
 	}
 
 	/**
@@ -361,11 +285,187 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link AddSensingDeviceResponse }
+	 * Create an instance of {@link DeleteSensingDeviceResponse }
 	 * 
 	 */
-	public AddSensingDeviceResponse createAddSensingDeviceResponse() {
-		return new AddSensingDeviceResponse();
+	public DeleteSensingDeviceResponse createDeleteSensingDeviceResponse() {
+		return new DeleteSensingDeviceResponse();
+	}
+
+	/**
+	 * Create an instance of {@link CountConfigTypeResponse }
+	 * 
+	 */
+	public CountConfigTypeResponse createCountConfigTypeResponse() {
+		return new CountConfigTypeResponse();
+	}
+
+	/**
+	 * Create an instance of {@link UpdateProject }
+	 * 
+	 */
+	public UpdateProject createUpdateProject() {
+		return new UpdateProject();
+	}
+
+	/**
+	 * Create an instance of {@link AddConfigType }
+	 * 
+	 */
+	public AddConfigType createAddConfigType() {
+		return new AddConfigType();
+	}
+
+	/**
+	 * Create an instance of {@link DeleteSensingDevice }
+	 * 
+	 */
+	public DeleteSensingDevice createDeleteSensingDevice() {
+		return new DeleteSensingDevice();
+	}
+
+	/**
+	 * Create an instance of {@link UpdateProjectResponse }
+	 * 
+	 */
+	public UpdateProjectResponse createUpdateProjectResponse() {
+		return new UpdateProjectResponse();
+	}
+
+	/**
+	 * Create an instance of {@link AddProject }
+	 * 
+	 */
+	public AddProject createAddProject() {
+		return new AddProject();
+	}
+
+	/**
+	 * Create an instance of {@link QueryProjectResponse }
+	 * 
+	 */
+	public QueryProjectResponse createQueryProjectResponse() {
+		return new QueryProjectResponse();
+	}
+
+	/**
+	 * Create an instance of {@link CountUserSensingDeviceResponse }
+	 * 
+	 */
+	public CountUserSensingDeviceResponse createCountUserSensingDeviceResponse() {
+		return new CountUserSensingDeviceResponse();
+	}
+
+	/**
+	 * Create an instance of {@link CountUserSensingDevice }
+	 * 
+	 */
+	public CountUserSensingDevice createCountUserSensingDevice() {
+		return new CountUserSensingDevice();
+	}
+
+	/**
+	 * Create an instance of {@link UserRegister }
+	 * 
+	 */
+	public UserRegister createUserRegister() {
+		return new UserRegister();
+	}
+
+	/**
+	 * Create an instance of {@link GetUserByUserNameResponse }
+	 * 
+	 */
+	public GetUserByUserNameResponse createGetUserByUserNameResponse() {
+		return new GetUserByUserNameResponse();
+	}
+
+	/**
+	 * Create an instance of {@link QueryUserControllingDevice }
+	 * 
+	 */
+	public QueryUserControllingDevice createQueryUserControllingDevice() {
+		return new QueryUserControllingDevice();
+	}
+
+	/**
+	 * Create an instance of {@link QueryUserSensingDeviceResponse }
+	 * 
+	 */
+	public QueryUserSensingDeviceResponse createQueryUserSensingDeviceResponse() {
+		return new QueryUserSensingDeviceResponse();
+	}
+
+	/**
+	 * Create an instance of {@link QueryUserSensingDevice }
+	 * 
+	 */
+	public QueryUserSensingDevice createQueryUserSensingDevice() {
+		return new QueryUserSensingDevice();
+	}
+
+	/**
+	 * Create an instance of {@link AddControllingDevice }
+	 * 
+	 */
+	public AddControllingDevice createAddControllingDevice() {
+		return new AddControllingDevice();
+	}
+
+	/**
+	 * Create an instance of {@link CountConfigType }
+	 * 
+	 */
+	public CountConfigType createCountConfigType() {
+		return new CountConfigType();
+	}
+
+	/**
+	 * Create an instance of {@link AddDataType }
+	 * 
+	 */
+	public AddDataType createAddDataType() {
+		return new AddDataType();
+	}
+
+	/**
+	 * Create an instance of {@link AddControllingDeviceResponse }
+	 * 
+	 */
+	public AddControllingDeviceResponse createAddControllingDeviceResponse() {
+		return new AddControllingDeviceResponse();
+	}
+
+	/**
+	 * Create an instance of {@link CountUserControllingDeviceResponse }
+	 * 
+	 */
+	public CountUserControllingDeviceResponse createCountUserControllingDeviceResponse() {
+		return new CountUserControllingDeviceResponse();
+	}
+
+	/**
+	 * Create an instance of {@link AddConfigTypeResponse }
+	 * 
+	 */
+	public AddConfigTypeResponse createAddConfigTypeResponse() {
+		return new AddConfigTypeResponse();
+	}
+
+	/**
+	 * Create an instance of {@link AddDataTypeResponse }
+	 * 
+	 */
+	public AddDataTypeResponse createAddDataTypeResponse() {
+		return new AddDataTypeResponse();
+	}
+
+	/**
+	 * Create an instance of {@link DeleteConfigType }
+	 * 
+	 */
+	public DeleteConfigType createDeleteConfigType() {
+		return new DeleteConfigType();
 	}
 
 	/**
@@ -395,6 +495,19 @@ public class ObjectFactory {
 	}
 
 	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link QueryUserControllingDeviceResponse }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "queryUserControllingDeviceResponse")
+	public JAXBElement<QueryUserControllingDeviceResponse> createQueryUserControllingDeviceResponse(
+			QueryUserControllingDeviceResponse value) {
+		return new JAXBElement<QueryUserControllingDeviceResponse>(
+				_QueryUserControllingDeviceResponse_QNAME,
+				QueryUserControllingDeviceResponse.class, null, value);
+	}
+
+	/**
 	 * Create an instance of {@link JAXBElement }{@code <}{@link AddProject }
 	 * {@code >}
 	 * 
@@ -416,6 +529,43 @@ public class ObjectFactory {
 		return new JAXBElement<CountConfigTypeResponse>(
 				_CountConfigTypeResponse_QNAME, CountConfigTypeResponse.class,
 				null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}{@link QueryProject }
+	 * {@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "queryProject")
+	public JAXBElement<QueryProject> createQueryProject(QueryProject value) {
+		return new JAXBElement<QueryProject>(_QueryProject_QNAME,
+				QueryProject.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link QueryUserSensingDeviceResponse }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "queryUserSensingDeviceResponse")
+	public JAXBElement<QueryUserSensingDeviceResponse> createQueryUserSensingDeviceResponse(
+			QueryUserSensingDeviceResponse value) {
+		return new JAXBElement<QueryUserSensingDeviceResponse>(
+				_QueryUserSensingDeviceResponse_QNAME,
+				QueryUserSensingDeviceResponse.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link QueryProjectResponse }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "queryProjectResponse")
+	public JAXBElement<QueryProjectResponse> createQueryProjectResponse(
+			QueryProjectResponse value) {
+		return new JAXBElement<QueryProjectResponse>(
+				_QueryProjectResponse_QNAME, QueryProjectResponse.class, null,
+				value);
 	}
 
 	/**
@@ -532,6 +682,32 @@ public class ObjectFactory {
 
 	/**
 	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link QueryUserControllingDevice }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "queryUserControllingDevice")
+	public JAXBElement<QueryUserControllingDevice> createQueryUserControllingDevice(
+			QueryUserControllingDevice value) {
+		return new JAXBElement<QueryUserControllingDevice>(
+				_QueryUserControllingDevice_QNAME,
+				QueryUserControllingDevice.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link DeleteConfigTypeResponse }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "deleteConfigTypeResponse")
+	public JAXBElement<DeleteConfigTypeResponse> createDeleteConfigTypeResponse(
+			DeleteConfigTypeResponse value) {
+		return new JAXBElement<DeleteConfigTypeResponse>(
+				_DeleteConfigTypeResponse_QNAME,
+				DeleteConfigTypeResponse.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
 	 * {@link AddProjectResponse }{@code >}
 	 * 
 	 */
@@ -540,6 +716,18 @@ public class ObjectFactory {
 			AddProjectResponse value) {
 		return new JAXBElement<AddProjectResponse>(_AddProjectResponse_QNAME,
 				AddProjectResponse.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link DeleteConfigType }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "deleteConfigType")
+	public JAXBElement<DeleteConfigType> createDeleteConfigType(
+			DeleteConfigType value) {
+		return new JAXBElement<DeleteConfigType>(_DeleteConfigType_QNAME,
+				DeleteConfigType.class, null, value);
 	}
 
 	/**
@@ -589,6 +777,17 @@ public class ObjectFactory {
 			AddDataTypeResponse value) {
 		return new JAXBElement<AddDataTypeResponse>(_AddDataTypeResponse_QNAME,
 				AddDataTypeResponse.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}{@link DeleteDataType }
+	 * {@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "deleteDataType")
+	public JAXBElement<DeleteDataType> createDeleteDataType(DeleteDataType value) {
+		return new JAXBElement<DeleteDataType>(_DeleteDataType_QNAME,
+				DeleteDataType.class, null, value);
 	}
 
 	/**
@@ -704,6 +903,19 @@ public class ObjectFactory {
 
 	/**
 	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link QueryUserSensingDevice }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "queryUserSensingDevice")
+	public JAXBElement<QueryUserSensingDevice> createQueryUserSensingDevice(
+			QueryUserSensingDevice value) {
+		return new JAXBElement<QueryUserSensingDevice>(
+				_QueryUserSensingDevice_QNAME, QueryUserSensingDevice.class,
+				null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
 	 * {@link DeleteSensingDeviceResponse }{@code >}
 	 * 
 	 */
@@ -713,18 +925,6 @@ public class ObjectFactory {
 		return new JAXBElement<DeleteSensingDeviceResponse>(
 				_DeleteSensingDeviceResponse_QNAME,
 				DeleteSensingDeviceResponse.class, null, value);
-	}
-
-	/**
-	 * Create an instance of {@link JAXBElement }{@code <}{@link CountConfigType }
-	 * {@code >}
-	 * 
-	 */
-	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "countConfigType")
-	public JAXBElement<CountConfigType> createCountConfigType(
-			CountConfigType value) {
-		return new JAXBElement<CountConfigType>(_CountConfigType_QNAME,
-				CountConfigType.class, null, value);
 	}
 
 	/**
@@ -741,6 +941,18 @@ public class ObjectFactory {
 	}
 
 	/**
+	 * Create an instance of {@link JAXBElement }{@code <}{@link CountConfigType }
+	 * {@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "countConfigType")
+	public JAXBElement<CountConfigType> createCountConfigType(
+			CountConfigType value) {
+		return new JAXBElement<CountConfigType>(_CountConfigType_QNAME,
+				CountConfigType.class, null, value);
+	}
+
+	/**
 	 * Create an instance of {@link JAXBElement }{@code <}{@link CountDataType }
 	 * {@code >}
 	 * 
@@ -749,6 +961,19 @@ public class ObjectFactory {
 	public JAXBElement<CountDataType> createCountDataType(CountDataType value) {
 		return new JAXBElement<CountDataType>(_CountDataType_QNAME,
 				CountDataType.class, null, value);
+	}
+
+	/**
+	 * Create an instance of {@link JAXBElement }{@code <}
+	 * {@link DeleteDataTypeResponse }{@code >}
+	 * 
+	 */
+	@XmlElementDecl(namespace = "http://service.njupt.com/", name = "deleteDataTypeResponse")
+	public JAXBElement<DeleteDataTypeResponse> createDeleteDataTypeResponse(
+			DeleteDataTypeResponse value) {
+		return new JAXBElement<DeleteDataTypeResponse>(
+				_DeleteDataTypeResponse_QNAME, DeleteDataTypeResponse.class,
+				null, value);
 	}
 
 	/**

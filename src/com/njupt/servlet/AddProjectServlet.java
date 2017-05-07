@@ -47,7 +47,6 @@ public class AddProjectServlet extends HttpServlet {
 		if(ispublic.equals("公开"))
 			publicstatus = true;
 			
-		
 		if(projectname==null||ispublic==null||projectkey==null){ 
 			out.println("<script>alert('存在空参数!');location.href='NewProject.jsp';</script>");
 		}
@@ -57,7 +56,7 @@ public class AddProjectServlet extends HttpServlet {
 		try {
 			result = CloudClient.getInstance().client.addProject(userid, projectname, publicstatus, projectkey);
 			if (result.contains("success")) {
-				out.println("<script>alert('项目添加成功!');location.href='ProjectProfile.jsp';</script>");
+				out.println("<script>alert('项目添加成功!');location.href='ProjectProfile';</script>");
 			}
 			else if(result.contains("exist")){
 				out.println("<script>alert('该用户不存在!');location.href='NewProject.jsp';</script>");
