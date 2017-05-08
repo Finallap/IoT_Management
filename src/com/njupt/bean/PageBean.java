@@ -80,6 +80,7 @@ public class PageBean {
 
     //8，页码条可以由总页数来计算显示，因此无需set方法
     public int[] getPageBar() {
+    	int totalPages = getTotalPages();
         pageBar = null;
         int startIndex ;
         int endIndex ;
