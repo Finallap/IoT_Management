@@ -11,8 +11,8 @@
             <small>在此页面修改项目信息</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="ProjectProfile.jsp">项目管理</a></li>
+            <li><a href="index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="ProjectProfile">项目管理</a></li>
             <li class="active">项目修改</li>
           </ol>
         </section>
@@ -25,10 +25,10 @@
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">项目添加</h3>
+                  <h3 class="box-title">项目修改</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="">
+                <form role="form" method="post" action="EditProject">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">项目名称</label>

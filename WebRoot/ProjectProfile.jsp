@@ -57,8 +57,11 @@
                              <p>请确定是否删除？ </p>
                             </div>
                            <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
+                           	  <form method="post" action="DeleteProject">
+                              	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              	<input type="hidden" name="projectid" value="${project.projectId}"> 
+                              	<button type="submit" class="btn btn-outline">删除</button>
+                              </form>
                             </div>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->

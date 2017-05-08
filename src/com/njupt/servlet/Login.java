@@ -17,18 +17,26 @@ import com.njupt.client.CloudClient;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/Login")
+public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public Login() {
         super();
         // TODO Auto-generated constructor stub
     }
-
+    
+    /**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("login.jsp").forward(request, response);
+	}
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -42,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 		String password=request.getParameter("password").trim();
 		
 		if(username==null||password==null){
-			out.println("<script>alert('参数为空!');location.href='login.jsp';</script>");
+			out.println("<script>alert('参数为空!');location.href='Login';</script>");
 		}
 		
 		String result;
@@ -62,10 +70,10 @@ public class LoginServlet extends HttpServlet {
 				}
 				
 //				request.getRequestDispatcher("index.jsp").forward(request, response);
-				response.sendRedirect(request.getContextPath()+"/index.jsp");
+				response.sendRedirect(request.getContextPath()+"/index");
 			}
 			else {
-				out.println("<script>alert('用户名或密码错误!');location.href='login.jsp';</script>");
+				out.println("<script>alert('用户名或密码错误!');location.href='Login';</script>");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

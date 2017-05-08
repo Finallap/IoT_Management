@@ -13,16 +13,16 @@ import javax.servlet.http.HttpSession;
 import com.njupt.client.CloudClient;
 
 /**
- * Servlet implementation class RegisterServlet
+ * Servlet implementation class EditProject
  */
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/EditProject")
+public class EditProject extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterServlet() {
+    public EditProject() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect(request.getContextPath()+"/register.jsp.jsp");
+		request.getRequestDispatcher("EditProject.jsp").forward(request, response);
 	}
 
 	/**
@@ -44,29 +44,33 @@ public class RegisterServlet extends HttpServlet {
 		response.setCharacterEncoding("GBK"); 
 		PrintWriter out = response.getWriter();
 		
-		String username=request.getParameter("username").trim();
-		String password=request.getParameter("password").trim();
-		String email=request.getParameter("email").trim();
+		HttpSession session = request.getSession();
+		int userid =  Integer.parseInt(session.getAttribute("userid").toString());
 		
-		if(username==null||password==null||email==null){ 
-			out.println("<script>alert('存在空参数!');location.href='register.jsp';</script>");
+		String projectname = request.getParameter("projectname").trim();
+		String ispublic =  request.getParameter("ispublic").trim();
+		String projectkey = request.getParameter("projectkey").trim();
+		
+		boolean publicstatus = false;
+		if(ispublic.equals("公开"))
+			publicstatus = true;
+			
+		if(projectname==null||ispublic==null||projectkey==null){ 
+			out.println("<script>alert('存在空参数!');location.href='NewProject.jsp';</script>");
 		}
 		
 		String result;
 		
 		try {
-			result = CloudClient.getInstance().client.userRegister(username, password, email);
+			result = CloudClient.getInstance().client.addProject(userid, projectname, publicstatus, projectkey);
 			if (result.contains("success")) {
-				out.println("<script>alert('注册成功!');location.href='index.jsp';</script>");
-				
-				HttpSession session = request.getSession();
-				session.setAttribute("username", username.trim());
+				out.println("<script>alert('项目添加成功!');location.href='ProjectProfile';</script>");
 			}
 			else if(result.contains("exist")){
-				out.println("<script>alert('改用户名已存在!');location.href='register.jsp';</script>");
+				out.println("<script>alert('该用户不存在!');location.href='NewProject';</script>");
 			}
 			else {
-				out.println("<script>alert('未知注册错误!');location.href='register.jsp';</script>");
+				out.println("<script>alert('未知错误!');location.href='NewProject';</script>");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -32,7 +32,7 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">请输入账号和密码</p>
-        <form action="LoginServlet" method="post"  onSubmit="return check()">
+        <form action="Login" method="post"  onSubmit="return check()">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="账号" name="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -55,8 +55,8 @@
           </div>
         </form>
 
-        <a href="register.jsp">注册</a><br>
-        <a href="system_introduction.jsp" class="text-center">关于系统</a>
+        <a href="Register">注册</a><br>
+        <a href="#" class="text-center">关于系统</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

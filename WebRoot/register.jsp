@@ -33,7 +33,7 @@
 
       <div class="register-box-body">
         <p class="login-box-msg">注册页面</p>
-        <form action="RegisterServlet" method="post" onSubmit="return check()">
+        <form action="Register" method="post" onSubmit="return check()">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="账号" name="username" id="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -64,7 +64,7 @@
           </div>
         </form>
 
-        <a href="login.jsp" class="text-center">我已有登陆账号</a>
+        <a href="Login" class="text-center">我已有登陆账号</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
     

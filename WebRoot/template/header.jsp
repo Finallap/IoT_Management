@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">账号管理</a>
                     </div>
                     <div class="pull-right">
-                      <a href="LogoutServlet" class="btn btn-default btn-flat">注销</a>
+                      <a href="Logout" class="btn btn-default btn-flat">注销</a>
                     </div>
                   </li>
                 </ul>
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">请选择功能</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="ProjectProfile.jsp"><i class="fa fa-fw fa-list-alt"></i> <span>我的项目</span></a></li>
+            <li><a href="ProjectProfile"><i class="fa fa-fw fa-list-alt"></i> <span>我的项目</span></a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">

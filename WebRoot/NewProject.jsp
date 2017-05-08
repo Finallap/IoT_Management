@@ -30,7 +30,7 @@
                   <h3 class="box-title">项目添加</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="AddProjectServlet"  onSubmit="return check()">
+                <form role="form" method="post" action="NewProject"  onSubmit="return check()">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">项目名称</label>

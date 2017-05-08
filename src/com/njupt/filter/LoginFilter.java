@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class LoginFilter
  */
 @WebFilter(filterName="LoginFilter",urlPatterns="/*",
-initParams={@WebInitParam(name="ignoreRegex",value="LoginServlet;RegisterServlet;LogoutServlet;login.jsp;register.jsp;bootstrap;build;dist;font-awesome;ionicons;plugins")})
+initParams={@WebInitParam(name="ignoreRegex",value="Login;Register;Logout;bootstrap;build;dist;font-awesome;ionicons;plugins")})
 public class LoginFilter implements Filter {
 	
 	private String ignoreRegex;
@@ -48,9 +48,9 @@ public class LoginFilter implements Filter {
 		
 		HttpSession session = http_request.getSession();
 		
-		if(http_request.getRequestURI().indexOf("login.jsp")!=-1&&session.getAttribute("username")!=null)
+		if(http_request.getRequestURI().indexOf("Login")!=-1&&session.getAttribute("username")!=null)
 		{
-			http_response.sendRedirect(http_request.getContextPath()+"/index.jsp");
+			http_response.sendRedirect(http_request.getContextPath()+"/index");
 			System.out.println("已经登录，跳转到首页");
 			return;
 		}
@@ -66,7 +66,7 @@ public class LoginFilter implements Filter {
 		}
 
 		if(session.getAttribute("username")==null){
-			http_response.sendRedirect(http_request.getContextPath()+"/login.jsp");
+			http_response.sendRedirect(http_request.getContextPath()+"/Login");
 			System.out.println(http_request.getRequestURI()+"不放行");
 			return;
 		}	
