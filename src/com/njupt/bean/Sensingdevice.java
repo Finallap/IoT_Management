@@ -22,6 +22,7 @@ public class Sensingdevice implements java.io.Serializable {
 	private String localtion;
 	private String deviceKey;
 	private String createTime;
+	private String projectName;
 
 	// Constructors
 
@@ -32,7 +33,7 @@ public class Sensingdevice implements java.io.Serializable {
 	/** full constructor */
 	public Sensingdevice(int projectID, String deviceName, String mac,
 			String protocol, String description, String localtion,
-			String deviceKey, String createTime) {
+			String deviceKey, String createTime, String projectName) {
 		this.projectID = projectID;
 		this.deviceName = deviceName;
 		this.mac = mac;
@@ -41,6 +42,7 @@ public class Sensingdevice implements java.io.Serializable {
 		this.localtion = localtion;
 		this.deviceKey = deviceKey;
 		this.createTime = createTime;
+		this.projectName = projectName;
 	}
 
 	// Property accessors
@@ -117,4 +119,11 @@ public class Sensingdevice implements java.io.Serializable {
 		this.createTime = createTime;
 	}
 
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
 }
