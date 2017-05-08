@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="#" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>I</b>OT</span>
           <!-- logo for regular state and mobile devices -->
@@ -182,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="treeview">
               <a href="#"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="SensingDeviceProfile.jsp">传感设备概览</a></li>
+                <li><a href="SensingDeviceProfile?currentPage=1">传感设备概览</a></li>
                 <li><a href="DataView.jsp">设备数据查看</a></li>
               </ul>
             </li>

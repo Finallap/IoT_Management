@@ -65,7 +65,7 @@
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">控制设备删除</h4>
+                              <h4 class="modal-title">设备删除</h4>
                             </div>
                             <div class="modal-body">
                              <p>您目前正在删除控制设备“${ControllingDevice.deviceName}”</p>
@@ -75,7 +75,7 @@
                            <div class="modal-footer">
                            	  <form method="post" action="DeleteControllingDevice">
                               	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              	<input type="hidden" name="deviceid" value="${ControllingDevice.deviceName}"> 
+                              	<input type="hidden" name="deviceid" value="${ControllingDevice.controllingDeviceId}"> 
                               	<button type="submit" class="btn btn-outline">删除</button>
                               </form>
                             </div>
@@ -89,55 +89,7 @@
                       </tr>
                       </c:forEach>
                       
-                      <tr role="row" class="even">
-                      	<td>1</td>
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 1.5</td>
-                        <td>Win 98+ / OSX.2+</td>
-                        <td>1.8</td>
-                        <td><span class="badge bg-green">3</span></td>
-                        <td>
-                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
-                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
-						</td>
-                        <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
-                    		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
-						</td>
-                      </tr><tr role="row" class="odd">
-                      	<td>1</td>
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 2.0</td>
-                        <td>Win 98+ / OSX.2+</td>
-                        <td>1.8</td>
-                        <td><span class="badge bg-green">3</span></td>
-                        <td>
-                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
-                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
-						</td>
-                        <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
-                    		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
-						</td>
-                      </tr><tr role="row" class="even">
-                      	<td>1</td>
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 3.0</td>
-                        <td>Win 2k+ / OSX.3+</td>
-                        <td>1.9</td>
-                        <td><span class="badge bg-green">3</span></td>
-                        <td>
-                    		<a href="#"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
-                    		<a href="#"><i class="fa fa-fw fa-print"></i>日志</a>
-						</td>
-                        <td>
-                    		<a href="#"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i>编辑</a>
-                    		<a href="#"><i class="fa fa-fw fa-remove"></i>删除</a>
-						</td>
-                      </tr>
+                      
                       </tbody>
                   </table></div></div>
                   
@@ -148,36 +100,7 @@
                   		</div>
                   		<div class="col-sm-7">
                   			<div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                  				<ul class="pagination">
-                  					<li class="paginate_button previous disabled" id="example2_previous"><a href="javascript:void(0)" onclick="gotopage(${pagebean.previousPage})" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a></li>
-                  					<li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                  					<li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                  					<li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                  					<li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                  					<li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                  					<li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                  					<li class="paginate_button next" id="example2_next"><a href="javascript:void(0)" onclick="gotopage(${pagebean.nextPage})" aria-controls="example2" data-dt-idx="7" tabindex="0">下一页</a></li>
-                  					<c:choose>  
-                        				<c:when test="${pageBean.currentPage==1}">  
-                           					 首页  
-                           					 上一页  
-                            				<a href="javascript:toPage(${pageBean.currentPage+1})">下一页</a>  
-                           					<a href="javascript:toPage(${pageBean.totalPage})">最后一页</a>  
-                        				</c:when>  
-                        				<c:when test="${pageBean.currentPage==pageBean.totalPage}">  
-                            				<a href="javascript:toPage(1)">首页</a>  
-                            				<a href="javascript:toPage(${pageBean.currentPage-1})">上一页</a>  
-                            				下一页  
-                            				最后一页  
-                        				</c:when>  
-                        				<c:otherwise>  
-                            				<a href="javascript:toPage(1)">首页</a>  
-                            				<a href="javascript:toPage(${pageBean.currentPage-1})">上一页</a>  
-                            				<a href="javascript:toPage(${pageBean.currentPage+1})">下一页</a>  
-                            				<a href="javascript:toPage(${pageBean.totalPage})">最后一页</a>  
-                        				</c:otherwise>  
-                    				</c:choose>  
-                  				</ul>
+                  				<jsp:include page="template/pagination.jsp" flush="true"/><!--动态包含分页页码-->
                   			</div>
                   		</div>
                   	</div>
@@ -194,7 +117,7 @@
 	
     <script type="text/javascript">  
         function toPage(num){  
-           location.href='ControllingDeviceProfile'+num;
+           location.href='ControllingDeviceProfile?currentPage='+num;
         }     
     </script>
 	
