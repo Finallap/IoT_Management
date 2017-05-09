@@ -300,7 +300,63 @@
                   </div><!-- /.table-responsive -->
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix" style="display: block;">
-                  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-right">增加设备</a>
+                  <a href="#" class="btn btn-sm btn-info btn-flat pull-right"  data-toggle="modal" data-target="#add-sensingdevice">增加传感设备</a>
+                  
+                  
+                  
+                  
+            <div class="modal" id="add-sensingdevice"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">创建传感设备</h4>
+                  </div>
+                  <!-- form start -->
+                <form role="form" method="post" action="AddSensingDevice">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">设备名称</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制器名称" name="devicename">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Mac地址</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入Mac地址" name="mac">
+                    </div>
+                    <div class="form-group">
+                    	<label for="exampleInputEmail1">使用协议</label>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="protocol">
+                     	 <option selected="selected" value="HTTP">HTTP</option>
+                     	 <option value="TCP">TCP</option>
+                   	 	</select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">描述</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入设备描述" name="description">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">地点</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入设备地点" name="localtion">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">设备Key</label>
+                      <input type=text class="form-control" id="exampleInputEmail2" placeholder="输入设备标识符" name="deviceKey">
+                    </div>
+                  </div><!-- /.box-body -->
+
+                  <div class="box-footer">
+                  	<input type="hidden" name="projectid" value="${project.projectId}">
+                  	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary pull-right">创建</button>
+                  </div>
+                </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
+            
+                  
+                  
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
               
@@ -534,7 +590,63 @@
                   </div><!-- /.table-responsive -->
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix" style="display: block;">
-                  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-right">增加设备</a>
+                 <a href="#" class="btn btn-sm btn-info btn-flat pull-right" data-toggle="modal" data-target="#add-controllingdevice">增加控制设备</a>
+                                    
+                  
+                  
+                  
+            <div class="modal" id="add-controllingdevice"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">创建控制设备</h4>
+                  </div>
+                  <!-- form start -->
+                <form role="form" method="post" action="AddControllingDevice">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">设备名称</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制器名称" name="devicename">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Mac地址</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入Mac地址" name="mac">
+                    </div>
+                    <div class="form-group">
+                    	<label for="exampleInputEmail1">使用协议</label>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="protocol">
+                     	 <option selected="selected" value="HTTP">HTTP</option>
+                     	 <option value="TCP">TCP</option>
+                   	 	</select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">描述</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入设备描述" name="description">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">地点</label>
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入设备地点" name="localtion">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">设备Key</label>
+                      <input type=text class="form-control" id="exampleInputEmail2" placeholder="输入设备标识符" name="deviceKey">
+                    </div>
+                  </div><!-- /.box-body -->
+
+                  <div class="box-footer">
+                  	<input type="hidden" name="projectid" value="${project.projectId}"> 
+                  	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary pull-right">创建</button>
+                  </div>
+                </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
+            
+                  
+                  
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
               

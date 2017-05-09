@@ -37,7 +37,7 @@
                 <form role="form" method="post" action="EditSensingDevice">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">控制器名称</label>
+                      <label for="exampleInputEmail1">设备名称</label>
                       <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制器名称" value="${device.deviceName}" name="devicename">
                     </div>
                     <div class="form-group">
