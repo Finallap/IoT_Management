@@ -1,4 +1,5 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -28,23 +29,24 @@
                   <h3 class="box-title">项目修改</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="EditProject">
+                <form method="post" action="EditProject">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">项目名称</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称" value="${project.projectName}" name="projectname">
                     </div>
                     <div class="form-group">
                     	<label for="exampleInputEmail1">项目类型</label>
-						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                     	 <option selected="selected">公开</option>
-                     	 <option>私密</option>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="ispublic">
+                     	 <option <c:if test="${project.isPublic==false}">selected="selected"</c:if>  value="1">公开</option>
+                     	 <option <c:if test="${project.isPublic==false}">selected="selected"</c:if>  value="0">私密</option>
                    	 	</select>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">项目Key</label>
-                      <input type=text disabled="disabled" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                      <input type=text readonly="readonly" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="${project.projectKey}" name="projectkey">
                     </div>
+                    <input type="hidden" name="projectid" value="${project.projectId}"> 
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">

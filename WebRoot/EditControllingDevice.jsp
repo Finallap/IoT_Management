@@ -1,4 +1,5 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -33,38 +34,39 @@
                   <h3 class="box-title">基本信息修改</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="">
+                <form role="form" method="post" action="EditControllingDevice">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">控制器名称</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制器名称" value="${device.deviceName}" name="devicename">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Mac地址</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入Mac地址" value="${device.mac}" name="mac">
                     </div>
                     <div class="form-group">
                     	<label for="exampleInputEmail1">使用协议</label>
-						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                     	 <option selected="selected">HTTP</option>
-                     	 <option>TCP</option>
+						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="protocol">
+                     	 <option <c:if test="${device.protocol=='HTTP'}">selected="selected"</c:if> value="HTTP">HTTP</option>
+                     	 <option <c:if test="${device.protocol=='TCP'}">selected="selected"</c:if> value="TCP">TCP</option>
                    	 	</select>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">描述</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入设备描述" value="${device.description}" name="description">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">地点</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入设备地点" value="${device.localtion}" name="localtion">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">设备Key</label>
-                      <input type=text disabled="disabled" class="form-control" id="exampleInputEmail2" placeholder="输入项目Key" value="dfsfsaf">
+                      <input type=text class="form-control" id="exampleInputEmail2" placeholder="输入设备标识符" value="${device.deviceKey}" name="deviceKey">
                     </div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
+                  	<input type="hidden" name="deviceid" value="${device.controllingDeviceId}">
                     <button type="submit" class="btn btn-primary">修改</button>
                   </div>
                 </form>

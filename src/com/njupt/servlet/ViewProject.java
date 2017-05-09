@@ -56,7 +56,7 @@ public class ViewProject extends HttpServlet {
 				request.getRequestDispatcher("ViewProject.jsp").forward(request, response);
 			}
 			else {
-				out.println("<script>alert('出现错误!');location.href='ViewProject?currentPage=1';</script>");
+				out.println("<script>alert('出现错误!');location.href='ProjectProfile';</script>");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

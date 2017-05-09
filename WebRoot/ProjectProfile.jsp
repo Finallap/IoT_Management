@@ -69,8 +69,8 @@
             
             
             
-                    	<a href="EditProject?ProjectID=${project.projectId}" class="pull-right"><i class="fa fa-fw fa-edit"></i>编辑</a>
-                    	<a href="ViewProject?ProjectID=${project.projectId}" class="pull-right"><i class="fa fa-fw fa-search"></i>查看详情</a>
+                    	<a href="EditProject?projectid=${project.projectId}" class="pull-right"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    	<a href="ViewProject?projectid=${project.projectId}" class="pull-right"><i class="fa fa-fw fa-search"></i>查看详情</a>
                     </li>
                   </ul>
                 </div>

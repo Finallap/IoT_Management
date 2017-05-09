@@ -49,7 +49,7 @@ public class NewProject extends HttpServlet {
 		String projectkey = request.getParameter("projectkey").trim();
 		
 		boolean publicstatus = false;
-		if(ispublic.equals("¹«¿ª"))
+		if(ispublic.equals("1"))
 			publicstatus = true;
 			
 		if(projectname==null||ispublic==null||projectkey==null){ 

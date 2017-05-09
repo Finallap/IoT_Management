@@ -50,7 +50,7 @@
                         <td>${ControllingDevice.localtion}</td>
                         <td><span class="badge bg-green">${ControllingDevice.typeCount}</span></td>
                         <td>
-                    		<a href="ViewControllingDevice.jsp?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
+                    		<a href="ViewControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
                     		<a href="LogView.jsp"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>

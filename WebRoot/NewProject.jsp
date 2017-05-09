@@ -40,7 +40,7 @@
                     	<label for="exampleInputEmail1">项目类型</label>
 						<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="ispublic" id="ispublic">
                      	 <option selected="selected" value="1">公开</option>
-                     	 <option value="1">私密</option>
+                     	 <option value="0">私密</option>
                    	 	</select>
                     </div>
                     <div class="form-group">
