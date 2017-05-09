@@ -14,8 +14,8 @@
             <small>在此页面查看项目详细信息</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="ProjectProfile.jsp">项目管理</a></li>
+            <li><a href="index"><i class="fa fa-dashboard"></i>首页</a></li>
+            <li><a href="ProjectProfile">项目管理</a></li>
             <li class="active">项目详情</li>
           </ol>
         </section>

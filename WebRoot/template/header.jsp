@@ -131,13 +131,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- Menu Body -->
                   <li class="user-body">
                     <div class="col-xs-4 text-center">
-                      <a href="#">项目</a>
+                      <a href="ProjectProfile">项目</a>
                     </div>
                     <div class="col-xs-4 text-center">
-                      <a href="#">设备</a>
+                      <a href="SensingDeviceProfile?currentPage=1">传感器</a>
                     </div>
                     <div class="col-xs-4 text-center">
-                      <a href="#">应用</a>
+                      <a href="ControllingDeviceProfile?currentPage=1">控制器</a>
                     </div>
                   </li>
                   <!-- Menu Footer-->

@@ -12,8 +12,8 @@
             <small>在此页面修改控制设备详细信息</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="SensingDeviceProfile.jsp">控制设备管理</a></li>
+            <li><a href="index"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="ControllingDeviceProfile">控制设备管理</a></li>
             <li class="active">控制设备修改</li>
           </ol>
         </section>

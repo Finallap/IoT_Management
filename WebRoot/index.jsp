@@ -12,8 +12,7 @@
             <small>Version 1.0</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li class="active">Here</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
           </ol>
         </section>
 

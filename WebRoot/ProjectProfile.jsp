@@ -13,7 +13,7 @@
             <small>进行项目的增加、修改、查看</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="index"><i class="fa fa-dashboard"></i>首页</a></li>
             <li class="active">项目管理</li>
           </ol>
         </section>
