@@ -1,5 +1,7 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  
+  <% String[] label ={"label-success","label-warning","label-primary","label-danger"};%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -57,8 +59,8 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">传感设备</a></li>
                   <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">控制设备</a></li>
-                  <li class=""><a href="#sensing" data-toggle="tab" aria-expanded="false">最新传感数据</a></li>
-                  <li class=""><a href="#control" data-toggle="tab" aria-expanded="false">最新控制日志</a></li>
+                  <li class=""><a href="#sensing" data-toggle="tab" aria-expanded="false">最新数据</a></li>
+                  <li class=""><a href="#control" data-toggle="tab" aria-expanded="false">最新日志</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="activity">
@@ -70,37 +72,47 @@
                         <tr>
                           <th>#</th>
                           <th>设备名称</th>
+                          <th>使用协议</th>
+                          <th>MAC地址</th>
                           <th>DeviceKey</th>
                           <th>设备地点</th>
                           <th>操作</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <c:forEach var="SensingDevice" items="${requestScope.SensingDeviceList}" varStatus="status">
                         <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
+                          <td><a href="#"> ${status.count}</a></td>
+                          <td>${SensingDevice.deviceName}</td>
+                          <td>${SensingDevice.protocol}</td>
+                          <td>${SensingDevice.mac}</td>
+                          <td>${SensingDevice.deviceKey}</td>
+                          <td><span class="label <%=label[(int)(Math.random()*4)] %>">${SensingDevice.localtion}</span></td>
                           <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
+                          	<a href="ViewSensingDevice?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-search"></i></a>
+                    		<a href="EditSensingDevice?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-edit"></i></a>
+                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
                     	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                     <div class="modal modal-danger" id="delete-sensingdevice-${SensingDevice.sensingDeviceId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
+                              <h4 class="modal-title">设备删除</h4>
                             </div>
                             <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
+                             <p>您目前正在删除控制设备“${SensingDevice.deviceName}”</p>
+                             <p>（删除设备会将所包含的数据全部删除，请慎重操作）</p>
+                             <p>请确定是否删除？ </p>
                             </div>
                            <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
+                           	  <form method="post" action="DeleteSensingDevice">
+                              	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              	<input type="hidden" name="deviceid" value="${SensingDevice.sensingDeviceId}"> 
+                              	<button type="submit" class="btn btn-outline">删除</button>
+                              </form>
                             </div>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
@@ -110,6 +122,7 @@
                     		
                           </td>
                         </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->
@@ -184,47 +197,56 @@
                         <tr>
                           <th>#</th>
                           <th>设备名称</th>
+                          <th>使用协议</th>
+                          <th>MAC地址</th>
                           <th>DeviceKey</th>
                           <th>设备地点</th>
                           <th>操作</th>
                         </tr>
                       </thead>
                       <tbody>
+                      	<c:forEach var="ControllingDevice" items="${requestScope.ControllingDeviceList}" varStatus="status">
                         <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
+                          <td><a href="#">1</a></td>
+                          <td>${ControllingDevice.deviceName}</td>
+                          <td>${ControllingDevice.protocol}</td>
+                          <td>${ControllingDevice.mac}</td>
+                          <td>${ControllingDevice.deviceKey}</td>
+                          <td><span class="label <%=label[(int)(Math.random()*4)] %>">${ControllingDevice.localtion}</span></td>
                           <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
+                          	<a href="ViewControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-search"></i></a>
+                    		<a href="EditControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-edit"></i></a>
+                    		<a href="#"  data-toggle="modal" data-target="#delete-controllingdevice-${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
                     	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                     <div class="modal modal-danger" id="delete-controllingdevice-${ControllingDevice.controllingDeviceId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
+                              <h4 class="modal-title">设备删除</h4>
                             </div>
                             <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
+                             <p>您目前正在删除控制设备“${ControllingDevice.deviceName}”</p>
+                             <p>（删除设备会将所包含的数据全部删除，请慎重操作）</p>
+                             <p>请确定是否删除？ </p>
                             </div>
                            <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
+                           	  <form method="post" action="DeleteControllingDevice">
+                              	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              	<input type="hidden" name="deviceid" value="${ControllingDevice.controllingDeviceId}"> 
+                              	<button type="submit" class="btn btn-outline">删除</button>
+                              </form>
                             </div>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                       </div>
             
               		
-                    		
                           </td>
                         </tr>
-                        
+                        </c:forEach>
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->

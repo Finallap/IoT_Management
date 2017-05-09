@@ -43,9 +43,9 @@
                     <tbody>
                      
                     
-                    <c:forEach var="SensingDevice" items="${requestScope.pagebean.contentData }">
+                    <c:forEach var="SensingDevice" items="${requestScope.pagebean.contentData}" varStatus="status">
                     <tr role="row" class="odd">
-                    	<td>1</td>
+                    	<td>${status.count}</td>
                         <td class="sorting_1">${SensingDevice.deviceName}</td>
                         <td>${SensingDevice.projectName}</td>
                         <td>${SensingDevice.mac}</td>
