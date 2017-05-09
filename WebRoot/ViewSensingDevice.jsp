@@ -26,22 +26,22 @@
               <div class="box box-primary">
                 <div class="box-body box-profile">
                   <img class="profile-user-img img-responsive img-circle" src="dist/img/SensingDevice -128x128.jpg" alt="User profile picture">
-                  <h3 class="profile-username text-center">温度传感器</h3>
-                  <p class="text-muted text-center">南邮气象监控</p>
+                  <h3 class="profile-username text-center">${device.deviceName}</h3>
+                  <p class="text-muted text-center">${device.projectName}</p>
 
                   <ul class="list-group list-group-unbordered">
                   	<li class="list-group-item">
-                      <b>DeviceKey</b> <a class="pull-right">dfsdfsafdsfdsgfhgfjjugf</a>
+                      <b>DeviceKey</b> <a class="pull-right">${device.deviceKey}</a>
                     </li>
                     <li class="list-group-item">
-                      <b>MAC地址</b> <a class="pull-right">ds-sd-sd-sds-sds-sd</a>
+                      <b>MAC地址</b> <a class="pull-right">${device.mac}</a>
                     </li>
                     <li class="list-group-item">
-                      <b>使用协议</b> <a class="pull-right">HTTP</a>
+                      <b>使用协议</b> <a class="pull-right">${device.protocol}</a>
                     </li>
                   </ul>
 
-                  <a href="EditSensingDevice.jsp" class="btn btn-primary btn-block"><b>编辑</b></a>
+                  <a href="EditSensingDevice?deviceid=${device.sensingDeviceId}" class="btn btn-primary btn-block"><b>编辑</b></a>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
@@ -53,13 +53,13 @@
                 <div class="box-body">
                   
 				  <strong><i class="fa fa-map-marker margin-r-5"></i>放置地点</strong>
-                  <p class="text-muted">三牌楼校区</p>
+                  <p class="text-muted">${device.localtion}</p>
                   
                   <hr>
 
                   <strong><i class="fa fa-book margin-r-5"></i>设备描述</strong>
                   <p class="text-muted">
-                    	这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述， 这是描述
+                    	${device.description}
                   </p>
                   
                 </div><!-- /.box-body -->

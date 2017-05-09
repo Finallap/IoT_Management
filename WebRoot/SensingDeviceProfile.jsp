@@ -50,13 +50,13 @@
                         <td>${SensingDevice.projectName}</td>
                         <td>${SensingDevice.mac}</td>
                         <td>${SensingDevice.localtion}</td>
-                        <td><span class="badge bg-green">3</span></td>
+                        <td><span class="badge bg-green">${SensingDevice.typeCount}</span></td>
                         <td>
                     		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
-                    		<a href="ViewSensingDevice.jsp?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="EditSensingDevice.jsp?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewSensingDevice?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditSensingDevice?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-remove"></i>删除</a>
                     		
                     		                    		

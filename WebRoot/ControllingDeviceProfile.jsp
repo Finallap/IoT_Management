@@ -48,14 +48,14 @@
                         <td>${ControllingDevice.projectName}</td>
                         <td>${ControllingDevice.mac}</td>
                         <td>${ControllingDevice.localtion}</td>
-                        <td><span class="badge bg-green">3</span></td>
+                        <td><span class="badge bg-green">${ControllingDevice.typeCount}</span></td>
                         <td>
                     		<a href="ViewControllingDevice.jsp?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
                     		<a href="LogView.jsp"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
-                    		<a href="ViewControllingDevice.jsp?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-search"></i>查看</a>
-                    		<a href="EditControllingDevice.jsp?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-edit"></i>编辑</a>
+                    		<a href="ViewControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-search"></i>查看</a>
+                    		<a href="EditControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-edit"></i>编辑</a>
                     		<a href="#"  data-toggle="modal" data-target="#delete-controllingdevice-${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-remove"></i>删除</a>
                     		
                     		                    		

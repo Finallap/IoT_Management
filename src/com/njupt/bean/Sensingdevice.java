@@ -23,6 +23,7 @@ public class Sensingdevice implements java.io.Serializable {
 	private String deviceKey;
 	private String createTime;
 	private String projectName;
+	private Integer typeCount;
 
 	// Constructors
 
@@ -33,7 +34,7 @@ public class Sensingdevice implements java.io.Serializable {
 	/** full constructor */
 	public Sensingdevice(int projectID, String deviceName, String mac,
 			String protocol, String description, String localtion,
-			String deviceKey, String createTime, String projectName) {
+			String deviceKey, String createTime, String projectName,int typeCount) {
 		this.projectID = projectID;
 		this.deviceName = deviceName;
 		this.mac = mac;
@@ -43,6 +44,7 @@ public class Sensingdevice implements java.io.Serializable {
 		this.deviceKey = deviceKey;
 		this.createTime = createTime;
 		this.projectName = projectName;
+		this.typeCount = typeCount;
 	}
 
 	// Property accessors
@@ -126,4 +128,13 @@ public class Sensingdevice implements java.io.Serializable {
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
+
+	public Integer getTypeCount() {
+		return typeCount;
+	}
+
+	public void setTypeCount(Integer typeCount) {
+		this.typeCount = typeCount;
+	}
+	
 }
