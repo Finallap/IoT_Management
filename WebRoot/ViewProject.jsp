@@ -1,4 +1,5 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -19,66 +20,50 @@
 
         <!-- Main content -->
         <section class="content">
-          <!-- Info boxes -->
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">项目</span>
-                  <span class="info-box-number">90<small>%</small></span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">设备</span>
-                  <span class="info-box-number">41,410</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-
-            <!-- fix for small devices only -->
-            <div class="clearfix visible-sm-block"></div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">应用</span>
-                  <span class="info-box-number">760</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">添加项目</span>
-                  <span class="info-box-number">2,000</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
 
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
-            <div class="col-md-8">
-              <!-- MAP & BOX PANE -->
+            <div class="col-md-3">
+            
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                  <img class="profile-user-img img-responsive img-circle" src="dist/img/Project -160x160.jpg" alt="User profile picture">
+                  <h3 class="profile-username text-center">${project.projectName} </h3>
+                  <p class="text-muted text-center"><c:if test="${project.isPublic==false}">私密项目</c:if><c:if test="${project.isPublic==true}">公开项目</c:if></p>
 
-              <!-- TABLE: LATEST ORDERS -->
-              <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">传感器列表</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body" style="display: block;">
+                  <ul class="list-group list-group-unbordered">
+                  	<li class="list-group-item">
+                      <b>传感器数目</b> <a class="pull-right"> <span class="pull-right badge bg-blue">${project.sensingDeviceNum}</span></a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>控制器数目</b> <a class="pull-right"> <span class="pull-right badge bg-green">${project.controllingDeviceNum}</span></a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>创建时间</b> <a class="pull-right"><span class="pull-right badge bg-aqua">${project.createTime}</span></a>
+                    </li>
+                  </ul>
+
+                  <a href="EditProject?projectid=${project.projectId}" class="btn btn-primary btn-block"><b>编辑</b></a>
+                </div><!-- /.box-body -->
+              </div>
+            
+              
+            
+            </div><!-- /.col -->
+            
+            <div class="col-md-9">
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">传感设备</a></li>
+                  <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">控制设备</a></li>
+                  <li class=""><a href="#sensing" data-toggle="tab" aria-expanded="false">最新传感数据</a></li>
+                  <li class=""><a href="#control" data-toggle="tab" aria-expanded="false">最新控制日志</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="activity">
+                  
+                  <div class="box-body" style="display: block;">
                   <div class="table-responsive">
                     <table class="table no-margin">
                       <thead>
@@ -91,176 +76,6 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
                         <tr>
                           <td><a href="pages/examples/invoice.html">1</a></td>
                           <td>温度传感器1</td>
@@ -358,16 +173,10 @@
                   
                   
                 </div><!-- /.box-footer -->
-              </div><!-- /.box -->
-              
-              <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">控制器列表</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div><!-- /.box-header -->
+                  </div><!-- /.tab-pane -->
+                  
+                  
+                  <div class="tab-pane" id="timeline">
                 <div class="box-body" style="display: block;">
                   <div class="table-responsive">
                     <table class="table no-margin">
@@ -415,176 +224,7 @@
                     		
                           </td>
                         </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
-                          <td><span class="label label-success">科研楼一楼</span></td>
-                          <td>
-                          	<a href="#"><i class="fa fa-fw fa-search"></i></a>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
-                    		
-                    		                    		
-                    	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                         <div class="modal-content">
-                           <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
-                            </div>
-                            <div class="modal-body">
-                             <p>您目前正在删除传感器“xxxx”，请确定是否删除？</p>
-                            </div>
-                           <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
-                            </div>
-                          </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                      </div>
-            
-              		
-                    		
-                          </td>
-                        </tr>
+                        
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->
@@ -648,18 +288,11 @@
                   
                   
                 </div><!-- /.box-footer -->
-              </div><!-- /.box -->
-              
-            </div><!-- /.col -->
-
-            <div class="col-md-4">
-            
-              <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">传感器最近十条上传数据</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <table class="table table-bordered">
+                  </div><!-- /.tab-pane -->
+                  
+                <div class="tab-pane" id="sensing">
+                <div class="box-body" >
+                  <table  class="table no-margin">
                     <tbody><tr>
                       <th style="width: 10px">#</th>
                       <th>设备</th>
@@ -697,14 +330,12 @@
                     </tr>
                   </tbody></table>
                 </div><!-- /.box-body -->
-              </div><!-- /.box -->
-              
-              <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">控制器最近十条控制指令</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <table class="table table-bordered">
+
+                  </div><!-- /.tab-pane -->
+                  
+                  <div class="tab-pane" id="control">
+					<div class="box-body">
+                  <table  class="table no-margin">
                     <tbody><tr>
                       <th style="width: 10px">#</th>
                       <th>设备</th>
@@ -742,9 +373,12 @@
                     </tr>
                   </tbody></table>
                 </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            
+                  </div><!-- /.tab-pane -->
+                  
+                </div><!-- /.tab-content -->
+              </div><!-- /.nav-tabs-custom -->
             </div><!-- /.col -->
+            
           </div><!-- /.row -->
         </section>
         

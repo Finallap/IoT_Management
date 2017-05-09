@@ -12,7 +12,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="SensingDeviceProfile.jsp">控制设备管理</a></li>
+            <li><a href="ControllingDeviceProfile.jsp">控制设备管理</a></li>
             <li class="active">控制设备详情</li>
           </ol>
         </section>
@@ -41,7 +41,7 @@
                     </li>
                   </ul>
 
-                  <a href="EditSensingDevice?deviceid=${device.controllingDeviceId}" class="btn btn-primary btn-block"><b>编辑</b></a>
+                  <a href="EditControllingDevice?deviceid=${device.controllingDeviceId}" class="btn btn-primary btn-block"><b>编辑</b></a>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
