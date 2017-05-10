@@ -2,6 +2,7 @@ package com.njupt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.njupt.bean.Configtype;
 import com.njupt.bean.Controllingdevice;
 import com.njupt.client.CloudClient;
 
@@ -51,8 +54,20 @@ public class ViewControllingDevice extends HttpServlet {
 				JSONObject jsonObject = JSONObject.fromObject(jsonString); 
 				JSONObject deviceObject = (JSONObject) jsonObject.get("ControllingDevice");
 				Controllingdevice device = (Controllingdevice)JSONObject.toBean(deviceObject, Controllingdevice.class);
-
 				request.setAttribute("device", device);
+				
+				String ConfigTypeListString = CloudClient.getInstance().client.getConfigTypeListByDeviceID(deviceid);
+				JSONObject ConfigTypeListObject = JSONObject.fromObject(ConfigTypeListString); 
+				JSONArray ConfigTypeArray = ConfigTypeListObject.getJSONArray("ConfigTypeList");
+				ArrayList<Configtype> ConfigTypeList = new ArrayList<Configtype>();
+				if (ConfigTypeArray.size()>0) {
+					for (int i = 0; i <ConfigTypeArray.size(); i++) {
+						Configtype Configtype = new Configtype();
+						Configtype = (Configtype)JSONObject.toBean(ConfigTypeArray.getJSONObject(i), Configtype.class);
+						ConfigTypeList.add(Configtype);
+					}
+				}
+				request.setAttribute("ConfigTypeList", ConfigTypeList);
 				
 				request.getRequestDispatcher("ViewControllingDevice.jsp").forward(request, response);
 			}

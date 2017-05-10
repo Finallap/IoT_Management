@@ -1,4 +1,5 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -86,29 +87,35 @@
                         </tr>
                       </thead>
                       <tbody>
+                      	<c:forEach var="ConfigType" items="${requestScope.ConfigTypeList}" varStatus="status">
                         <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度控制器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
+                          <td><a href="#"> ${status.count}</a></td>
+                          <td>${ConfigType.configTypeName}</td>
+                          <td>${ConfigType.mark}</td>
                           <td>
                     		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#" data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
+                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
                     	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                     <div class="modal modal-danger" id="delete-datatype-${DataType.dataTypeId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">控制项目删除</h4>
+                              <h4 class="modal-title">设备删除</h4>
                             </div>
                             <div class="modal-body">
-                             <p>您目前正在删除控制项目“xxxx”，请确定是否删除？</p>
+                             <p>您目前正在删除控制项目“${ConfigType.configTypeName}”</p>
+                             <p>（删除控制项目会将该项目有关的所有日志全部删除，请慎重操作）</p>
+                             <p>请确定是否删除？ </p>
                             </div>
                            <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
+                           	  <form method="post" action="DeleteConfigType">
+                              	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              	<input type="hidden" name="typeid" value="${ConfigType.configTypeId}"> 
+                              	<button type="submit" class="btn btn-outline">删除</button>
+                              </form>
                             </div>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
@@ -118,6 +125,7 @@
                     		
                           </td>
                         </tr>
+                       </c:forEach>
 
                       </tbody>
                     </table>

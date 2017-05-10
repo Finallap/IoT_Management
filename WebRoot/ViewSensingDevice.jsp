@@ -1,4 +1,5 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -81,37 +82,45 @@
                           <th>#</th>
                           <th>类型名称</th>
                           <th>单位符号</th>
+                          <th>传感器标记</th>
                           <th>数据</th>
                           <th>操作</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <c:forEach var="DataType" items="${requestScope.DataTypeList}" varStatus="status">
                         <tr>
-                          <td><a href="pages/examples/invoice.html">1</a></td>
-                          <td>温度传感器1</td>
-                          <td>dfsdfsafdsfdsgfhgfjjugf</td>
+                          <td><a href="#"> ${status.count}</a></td>
+                          <td>${DataType.type}</td>
+                          <td>${DataType.symbol}</td>
+                          <td>${DataType.mark}</td>
                           <td>
 							<a href="#"><i class="fa fa-fw fa-upload"></i>查看导出</a>
 						  </td>
                           <td>
                     		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#" data-toggle="modal" data-target="#delete-sensingdevice-1"><i class="fa fa-fw fa-remove"></i></a>
+                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
                     	
-                     <div class="modal modal-danger" id="delete-sensingdevice-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                     <div class="modal modal-danger" id="delete-datatype-${DataType.dataTypeId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                          <div class="modal-content">
                            <div class="modal-header">
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                              <h4 class="modal-title">传感器删除</h4>
+                              <h4 class="modal-title">设备删除</h4>
                             </div>
                             <div class="modal-body">
-                             <p>您目前正在删除数据类型“xxxx”，请确定是否删除？</p>
+                             <p>您目前正在删除数据类型“${DataType.type}”</p>
+                             <p>（删除类型会将所包含的数据全部删除，请慎重操作）</p>
+                             <p>请确定是否删除？ </p>
                             </div>
                            <div class="modal-footer">
-                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              <button type="button" class="btn btn-outline">删除</button>
+                           	  <form method="post" action="DeleteDataType">
+                              	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              	<input type="hidden" name="typeid" value="${DataType.dataTypeId}"> 
+                              	<button type="submit" class="btn btn-outline">删除</button>
+                              </form>
                             </div>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
@@ -121,7 +130,8 @@
                     		
                           </td>
                         </tr>
-
+						</c:forEach>
+						
                       </tbody>
                     </table>
                   </div><!-- /.table-responsive -->

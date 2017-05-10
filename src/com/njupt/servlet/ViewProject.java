@@ -57,7 +57,6 @@ public class ViewProject extends HttpServlet {
 				Project project = (Project)JSONObject.toBean(projectObject, Project.class);
 				request.setAttribute("project", project);
 				
-				//
 				String ControllingDeviceListString = CloudClient.getInstance().client.getControllingDeviceListByProjectID(projectid);
 				JSONObject ControllingDeviceListObject = JSONObject.fromObject(ControllingDeviceListString); 
 				JSONArray controllingDeviceArray = ControllingDeviceListObject.getJSONArray("ControllingDeviceList");
