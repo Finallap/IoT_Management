@@ -98,7 +98,44 @@
 							<a href="#"><i class="fa fa-fw fa-upload"></i>查看导出</a>
 						  </td>
                           <td>
-                    		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
+                    		<a href="#" data-toggle="modal" data-target="#edit-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-edit"></i></a>
+                    		
+                    		
+            <div class="modal" id="edit-datatype-${DataType.dataTypeId}"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">修改数据类型</h4>
+                  </div>
+                  <form role="form" method="post" action="EditDataType">
+                  	<div class="modal-body">
+                    	<div class="form-group">
+                      		<label for="exampleInputEmail1">数据类型名称</label>
+                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入数据类型名称" name="typename" value="${DataType.type}">
+                    	</div>
+                    	<div class="form-group">
+                     		<label for="exampleInputEmail1">数据单位</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入数据单位" name="symbol" value="${DataType.symbol}">
+                  		</div>
+                  		<div class="form-group">
+                     		<label for="exampleInputEmail1">传感器标记</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本数据的标记" name="mark" value="${DataType.mark}">
+                  		</div>
+                  	</div><!-- /.box-body -->
+                  	<div class="modal-footer">
+                    	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    	<input type="hidden" name="typeid" value="${DataType.dataTypeId}"> 
+                        <input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                    	<button type="submit" class="btn btn-primary">修改</button>
+                  	</div>
+                  </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
+            
+                    		
                     		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
