@@ -13,7 +13,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="index"><i class="fa fa-dashboard"></i>首页</a></li>
-            <li><a href="SensingDeviceProfile">传感设备管理</a></li>
+            <li><a href="SensingDeviceProfile?currentPage=1">传感设备管理</a></li>
             <li class="active">传感设备详情</li>
           </ol>
         </section>
@@ -119,6 +119,7 @@
                            	  <form method="post" action="DeleteDataType">
                               	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
                               	<input type="hidden" name="typeid" value="${DataType.dataTypeId}"> 
+                              	<input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
                               	<button type="submit" class="btn btn-outline">删除</button>
                               </form>
                             </div>
@@ -148,24 +149,25 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">创建数据类型</h4>
                   </div>
-                  <form role="form" method="post" action="">
+                  <form role="form" method="post" action="AddDataType">
                   	<div class="modal-body">
                     	<div class="form-group">
                       		<label for="exampleInputEmail1">数据类型名称</label>
-                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入数据类型名称">
+                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入数据类型名称" name="typename">
                     	</div>
                     	<div class="form-group">
                      		<label for="exampleInputEmail1">数据单位</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入数据单位">
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入数据单位" name="symbol">
                   		</div>
                   		<div class="form-group">
                      		<label for="exampleInputEmail1">传感器标记</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本数据的标记">
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本数据的标记" name="mark">
                   		</div>
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
                     	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                    	<button type="button" class="btn btn-primary">创建</button>
+                    	<input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                    	<button type="submit" class="btn btn-primary">创建</button>
                   	</div>
                   </form>
                 </div><!-- /.modal-content -->

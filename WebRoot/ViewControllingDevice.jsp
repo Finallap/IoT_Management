@@ -13,7 +13,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="index"><i class="fa fa-dashboard"></i>首页</a></li>
-            <li><a href="ControllingDeviceProfile">控制设备管理</a></li>
+            <li><a href="ControllingDeviceProfile?currentPage=1">控制设备管理</a></li>
             <li class="active">控制设备详情</li>
           </ol>
         </section>
@@ -94,11 +94,11 @@
                           <td>${ConfigType.mark}</td>
                           <td>
                     		<a href="#"><i class="fa fa-fw fa-edit"></i></a>
-                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-remove"></i></a>
+                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${ConfigType.configTypeId}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
                     	
-                     <div class="modal modal-danger" id="delete-datatype-${DataType.dataTypeId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                     <div class="modal modal-danger" id="delete-datatype-${ConfigType.configTypeId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                          <div class="modal-content">
                            <div class="modal-header">
@@ -114,6 +114,7 @@
                            	  <form method="post" action="DeleteConfigType">
                               	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
                               	<input type="hidden" name="typeid" value="${ConfigType.configTypeId}"> 
+                              	<input type="hidden" name="deviceid" value="${device.controllingDeviceId}"> 
                               	<button type="submit" class="btn btn-outline">删除</button>
                               </form>
                             </div>
@@ -143,20 +144,21 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">创建控制项目</h4>
                   </div>
-                  <form role="form" method="post" action="">
+                  <form role="form" method="post" action="AddConfigType">
                   	<div class="modal-body">
                     	<div class="form-group">
                       		<label for="exampleInputEmail1">控制项目名称</label>
-                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制项目名称">
+                      		<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制项目名称" name="typename">
                     	</div>
                     	<div class="form-group">
                      		<label for="exampleInputEmail1">控制项目标识</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入控制项目标识">
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入控制项目标识" name="mark">
                   		</div>
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
                     	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                    	<button type="button" class="btn btn-primary">创建</button>
+                    	<input type="hidden" name="deviceid" value="${device.controllingDeviceId}"> 
+                    	<button type="submit" class="btn btn-primary">创建</button>
                   	</div>
                   </form>
                 </div><!-- /.modal-content -->

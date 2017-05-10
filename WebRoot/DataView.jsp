@@ -12,7 +12,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="SensingDeviceProfile">传感设备管理</a></li>
+            <li><a href="SensingDeviceProfile?currentPage=1">传感设备管理</a></li>
             <li class="active">传感设备数据查看</li>
           </ol>
         </section>

@@ -12,7 +12,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="index"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="ControllingDeviceProfile">控制设备管理</a></li>
+            <li><a href="ControllingDeviceProfile?currentPage=1">控制设备管理</a></li>
             <li class="active">控制设备日志查看</li>
           </ol>
         </section>
