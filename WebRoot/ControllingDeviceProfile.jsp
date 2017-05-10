@@ -51,7 +51,7 @@
                         <td><span class="badge bg-green">${ControllingDevice.typeCount}</span></td>
                         <td>
                     		<a href="ViewControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-wrench"></i>控制发起</a>
-                    		<a href="LogView.jsp"><i class="fa fa-fw fa-print"></i>日志</a>
+                    		<a href="LogView?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-print"></i>日志</a>
 						</td>
                         <td>
                     		<a href="ViewControllingDevice?deviceid=${ControllingDevice.controllingDeviceId}"><i class="fa fa-fw fa-search"></i>查看</a>

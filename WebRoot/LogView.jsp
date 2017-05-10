@@ -1,4 +1,5 @@
     <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -23,7 +24,7 @@
           <!-- SELECT2 EXAMPLE -->
           <div class="box box-primary">
           	<!-- form start -->
-            <form role="form" method="post" action="">
+            <form role="form" method="get" action="LogView">
             <div class="box-header with-border">
               <h3 class="box-title">查询条件选择</h3>
               <div class="box-tools pull-right">
@@ -42,12 +43,16 @@
                       		<div class="input-group-addon">
                         		<i class="fa fa-clock-o"></i>
                       		</div>
-                      		<input class="form-control pull-right" id="datepicker" type="text">
+                      		<input class="form-control pull-right" id="datepicker" type="text" value="${start_day}" name="start_day">
                     		</div><!-- /.input group -->
                     	</div>
                   		<div class="form-group">
                     		<label for="exampleInputEmail1">选择设备</label>
-                    		<select id="Device" name="Device" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                    		<select id="Device" name="deviceid" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    			<c:forEach var="ControllingDevice" items="${requestScope.ControllingDeviceList}" varStatus="status">
+                     	 			<option value="${ControllingDevice.controllingDeviceId}" <c:if test="${ControllingDevice.controllingDeviceId==currentDeviceID}"> selected="selected" </c:if> >${ControllingDevice.deviceName}</option>
+                     	 		</c:forEach>
+                    		</select>
                    		</div>
 					</div>
 					<div class="col-md-6 ">
@@ -57,7 +62,7 @@
                       		<div class="input-group-addon">
                         		<i class="fa fa-clock-o"></i>
                       		</div>
-                      		<input class="form-control pull-right" id="datepicker_end" type="text">
+                      		<input class="form-control pull-right" id="datepicker_end" type="text" value="${end_day}" name="end_day">
                       		</div><!-- /.input group -->
                     	</div>
                     </div>

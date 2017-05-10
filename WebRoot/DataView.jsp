@@ -38,11 +38,11 @@
                   	<div class="col-md-6">
                   		<div class="form-group">
                     		<label for="exampleInputEmail1">选择设备</label>
-                    		<select id="teaching_building" name="teaching_building" onchange="selectschool(this);" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                    		<select id="device" name="deviceid" onchange="selectschool(this);" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
                    		</div>
                     	<div class="form-group">
                     		<label for="exampleInputEmail1">选择数据类型</label>
-                    		<select id="classroom" name="classroom" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                    		<select id="type" name="typeid" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
                     	</div>
 					</div>
 					<div class="col-md-6">
@@ -52,7 +52,7 @@
                       		<div class="input-group-addon">
                         		<i class="fa fa-clock-o"></i>
                       		</div>
-                      		<input class="form-control pull-right" id="datepicker" type="text">
+                      		<input class="form-control pull-right" id="datepicker" type="text" name="start_day" value="${start_day}">
                     		</div><!-- /.input group -->
                     	</div>
                     	<div class="form-group">
@@ -61,7 +61,7 @@
                       		<div class="input-group-addon">
                         		<i class="fa fa-clock-o"></i>
                       		</div>
-                      		<input class="form-control pull-right" id="datepicker_end" type="text">
+                      		<input class="form-control pull-right" id="datepicker_end" type="text" name="end_day" value="${end_day}">
                       		</div><!-- /.input group -->
                     	</div>
                     </div>
@@ -223,8 +223,8 @@
 		list2[list2.length] = new Array("101","102","103","104","105","106","107","108","109","201","202","203","204","205","208","213","300","301","302","303","304","305","308","309","310","312","313","401","402","403","404","405","408","410","412","413","506","507","508","509","510","511","513","515","520");
 		list2[list2.length] = new Array("101","102","103","104","109","110","201","202","204","205","208","300","301","306","308","309","311","312","313","405","406","410");
     
-    	var ddlschool = document.getElementById("teaching_building");
-   	 	var ddlmajor = document.getElementById("classroom");
+    	var ddlschool = document.getElementById("device");
+   	 	var ddlmajor = document.getElementById("type");
    	 	for(var i =0;i<list1.length; i++)
     	{
         var option = document.createElement("option");

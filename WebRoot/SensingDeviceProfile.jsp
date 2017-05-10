@@ -52,7 +52,7 @@
                         <td>${SensingDevice.localtion}</td>
                         <td><span class="badge bg-green">${SensingDevice.typeCount}</span></td>
                         <td>
-                    		<a href="DataView.jsp"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
+                    		<a href="DataView?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-upload"></i>数据查看导出</a>
 						</td>
                         <td>
                     		<a href="ViewSensingDevice?deviceid=${SensingDevice.sensingDeviceId}"><i class="fa fa-fw fa-search"></i>查看</a>
