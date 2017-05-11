@@ -19,6 +19,7 @@ import net.sf.json.JSONObject;
 
 import com.njupt.bean.Configtype;
 import com.njupt.bean.Controllingdevice;
+import com.njupt.bean.Devicedata;
 import com.njupt.bean.PageBean;
 import com.njupt.bean.Sensingdevice;
 import com.njupt.client.CloudClient;
@@ -52,6 +53,7 @@ public class DataView extends HttpServlet {
 		int pageSize = 10;
 		int currentPage = 1;
 		int deviceid = 0;
+		int count = 0;
 		
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
@@ -76,14 +78,12 @@ public class DataView extends HttpServlet {
 		int userid =  Integer.parseInt(session.getAttribute("userid").toString());
 		
 		try {
-			String jsonString = CloudClient.getInstance().client.queryUserSensingDevice(userid, pageSize, (currentPage-1)*pageSize);
+			String jsonString = CloudClient.getInstance().client.queryUserSensingDevice(userid, 0, 0);
 			System.out.println(jsonString);
 			if (jsonString.contains("success")) {
 				JSONObject jsonObject = JSONObject.fromObject(jsonString); 
 				JSONArray DeviceArray = jsonObject.getJSONArray("SensingDeviceList");
-				
 				ArrayList<Sensingdevice> SensingDeviceList = new ArrayList<Sensingdevice>();
-
 				if (DeviceArray.size()>0) {
 					for (int i = 0; i <DeviceArray.size(); i++) {
 						Sensingdevice sensingDevice = new Sensingdevice();
@@ -94,11 +94,38 @@ public class DataView extends HttpServlet {
 				}
 				request.setAttribute("SensingDeviceList", SensingDeviceList);
 				
-				
+				String DeviceString = CloudClient.getInstance().client.getSensingDeviceByDeviceID(deviceid);
+				if (DeviceString.contains("success")) {
+					JSONObject DeviceJsonObject = JSONObject.fromObject(DeviceString); 
+					JSONObject deviceObject = (JSONObject) DeviceJsonObject.get("SensingDevice");
+					Sensingdevice device = (Sensingdevice)JSONObject.toBean(deviceObject, Sensingdevice.class);
+					request.setAttribute("device", device);
+				}else {
+					out.println("<script>alert('参数错误:未找到该传感器!');location.href='DataView';</script>");
+				}
+
+				ArrayList<Devicedata> DataLogList = new ArrayList<Devicedata>();
+				String DataLogListJsonString = CloudClient.getInstance().client.getDataLogByDeviceID(deviceid, start_day, end_day, pageSize, (currentPage-1)*pageSize);
+				if (DataLogListJsonString.contains("success")) {
+					JSONObject DataLogListJsonObject = JSONObject.fromObject(DataLogListJsonString);
+					if(DataLogListJsonObject.get("DataLogList")!=null){
+						JSONArray DataLogListArray = DataLogListJsonObject.getJSONArray("DataLogList");
+						if (DataLogListArray.size()>0) {
+							for (int i = 0; i <DataLogListArray.size(); i++) {
+								Devicedata DataLog = new Devicedata();
+								DataLog = (Devicedata)JSONObject.toBean(DataLogListArray.getJSONObject(i), Devicedata.class);
+							
+								DataLogList.add(DataLog);
+							}
+						}
+					}
+					request.setAttribute("DataLogList", DataLogList);
+					count = DataLogListJsonObject.getInt("count");
+				}
 				
 				PageBean page = new PageBean();
-			    page.setContentData(SensingDeviceList);
-			    page.setTotalRecords(jsonObject.getInt("count"));
+			    page.setContentData(DataLogList);
+			    page.setTotalRecords(count);
 			    page.setCurrentPage(currentPage);
 			    page.setPageSize(pageSize);
 			     
@@ -107,7 +134,7 @@ public class DataView extends HttpServlet {
 				request.getRequestDispatcher("DataView.jsp").forward(request, response);
 			}
 			else {
-				out.println("<script>alert('出现错误!');location.href='SensingDeviceProfile?currentPage=1';</script>");
+				out.println("<script>alert('出现错误!');location.href='DataView';</script>");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
