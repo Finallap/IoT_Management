@@ -90,33 +90,32 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
-                    <tr role="row" class="odd">
-                    	<td>1</td>
-                        <td class="sorting_1">温度控制器1</td>
-                        <td>南邮气象系统</td>
-                        <td>df-df-df-dfd-dfd-df-df</td>
-                        <td><span class="badge bg-green">3</span></td>
-                        <td>2017-05-04 17:05:06</td>
-                      </tr>
-                      <tr role="row" class="even">
-                      	<td>1</td>
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 1.5</td>
-                        <td>Win 98+ / OSX.2+</td>
-                        <td><span class="badge bg-green">3</span></td>
-                        <td>2017-05-04 17:05:06</td>
-                      </tr>
-                      <tr role="row" class="odd">
-                      	<td>1</td>
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 2.0</td>
-                        <td>Win 98+ / OSX.2+</td>
-                        <td><span class="badge bg-green">3</span></td>
-                        <td>2017-05-04 17:05:06</td>
-                      </tr>
+                      <c:forEach var="ConfigLog" items="${requestScope.pagebean.contentData}" varStatus="status">  
+                      	<tr role="row" class="odd">
+                    		<td>${status.count}</td>
+                        	<td class="sorting_1">${device.deviceName}</td>
+                        	<td>${device.projectName}</td>
+                        	<td>${ConfigLog.configTypeName}</td>
+                        	<td>${ConfigLog.configContent}</td>
+                        	<td>${ConfigLog.saveTime}</td>
+                      	</tr>
+					  </c:forEach>
                       </tbody>
-                  </table></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共搜索到57条符合条件的数据</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a></li><li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">下一页</a></li></ul></div></div></div></div>
+                  </table></div></div>
+                  
+                  	<div class="row">
+                  		<div class="col-sm-5">
+                  			<div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共搜索到${pagebean.totalRecords}条符合条件的数据</div>
+                  		</div>
+                  		<div class="col-sm-7">
+                  			<div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                  				<jsp:include page="template/pagination.jsp" flush="true"/><!--动态包含分页页码-->
+                  			</div>
+                  		</div>
+                  	</div>
+                  
+                  
+                  </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
@@ -207,5 +206,27 @@
             });
 		});
 	</script>
+	
+	<script type="text/javascript">
+		function getQueryString(name) {
+  			var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+  			var r = window.location.search.substr(1).match(reg);
+  			if (r != null) {
+    			return unescape(r[2]);
+  			}
+  			return null;
+		}
+
+        function toPage(num){
+        	var url = window.location.pathname+'?currentPage='+num;
+        	if(getQueryString("deviceid")!=null)
+        		url += "&deviceid="+getQueryString("deviceid");
+        	if(getQueryString("start_day")!=null)
+        		url += "&start_day="+getQueryString("start_day");
+        	if(getQueryString("end_day")!=null)
+        		url += "&end_day="+getQueryString("end_day");
+        	location.href=url;
+        }     
+    </script>
 
     <jsp:include page="template/footer.jsp" flush="true"/><!--动态包含footer-->  

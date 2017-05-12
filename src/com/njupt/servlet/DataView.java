@@ -58,7 +58,7 @@ public class DataView extends HttpServlet {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
 		String end_day =  format.format(cal.getTime());
-		cal.add(Calendar.DAY_OF_MONTH, -7);
+		cal.add(Calendar.DAY_OF_MONTH, -21);
 		String start_day = format.format(cal.getTime());
 
 		for (String key : params.keySet()) {
@@ -79,12 +79,18 @@ public class DataView extends HttpServlet {
 		
 		try {
 			String jsonString = CloudClient.getInstance().client.queryUserSensingDevice(userid, 0, 0);
-			System.out.println(jsonString);
 			if (jsonString.contains("success")) {
 				JSONObject jsonObject = JSONObject.fromObject(jsonString); 
 				JSONArray DeviceArray = jsonObject.getJSONArray("SensingDeviceList");
 				ArrayList<Sensingdevice> SensingDeviceList = new ArrayList<Sensingdevice>();
 				if (DeviceArray.size()>0) {
+					//如果没有设备id输入，则设置id为第一个
+					if(deviceid==0){
+						Sensingdevice firstDevice = (Sensingdevice)JSONObject.toBean(DeviceArray.getJSONObject(0), Sensingdevice.class);
+						deviceid = firstDevice.getSensingDeviceId();
+					}
+					
+					//设备列表
 					for (int i = 0; i <DeviceArray.size(); i++) {
 						Sensingdevice sensingDevice = new Sensingdevice();
 						sensingDevice = (Sensingdevice)JSONObject.toBean(DeviceArray.getJSONObject(i), Sensingdevice.class);
@@ -94,15 +100,17 @@ public class DataView extends HttpServlet {
 				}
 				request.setAttribute("SensingDeviceList", SensingDeviceList);
 				
+				//选中设备
 				String DeviceString = CloudClient.getInstance().client.getSensingDeviceByDeviceID(deviceid);
 				if (DeviceString.contains("success")) {
 					JSONObject DeviceJsonObject = JSONObject.fromObject(DeviceString); 
 					JSONObject deviceObject = (JSONObject) DeviceJsonObject.get("SensingDevice");
 					Sensingdevice device = (Sensingdevice)JSONObject.toBean(deviceObject, Sensingdevice.class);
 					request.setAttribute("device", device);
-				}else {
-					out.println("<script>alert('参数错误:未找到该传感器!');location.href='DataView';</script>");
 				}
+//				else {
+//					out.println("<script>alert('参数错误:未找到该传感器!');location.href='DataView';</script>");
+//				}
 
 				ArrayList<Devicedata> DataLogList = new ArrayList<Devicedata>();
 				String DataLogListJsonString = CloudClient.getInstance().client.getDataLogByDeviceID(deviceid, start_day, end_day, pageSize, (currentPage-1)*pageSize);

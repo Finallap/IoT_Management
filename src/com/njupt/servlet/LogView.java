@@ -17,9 +17,12 @@ import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.njupt.bean.Configlog;
 import com.njupt.bean.Configtype;
 import com.njupt.bean.Controllingdevice;
+import com.njupt.bean.Devicedata;
 import com.njupt.bean.PageBean;
+import com.njupt.bean.Sensingdevice;
 import com.njupt.client.CloudClient;
 
 /**
@@ -51,11 +54,12 @@ public class LogView extends HttpServlet {
 		int pageSize = 10;
 		int currentPage = 1;
 		int deviceid = 0;
+		int count = 0;
 		
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
 		String end_day =  format.format(cal.getTime());
-		cal.add(Calendar.DAY_OF_MONTH, -7);
+		cal.add(Calendar.DAY_OF_MONTH, -21);
 		String start_day = format.format(cal.getTime());
 
 		for (String key : params.keySet()) {
@@ -76,28 +80,61 @@ public class LogView extends HttpServlet {
 		
 		try {
 			String jsonString = CloudClient.getInstance().client.queryUserControllingDevice(userid, -1, 0);
-			System.out.println(jsonString);
 			if (jsonString.contains("success")) {
 				JSONObject jsonObject = JSONObject.fromObject(jsonString); 
-				JSONArray controllingDeviceArray = jsonObject.getJSONArray("ControllingDeviceList");
-				
+				JSONArray DeviceArray = jsonObject.getJSONArray("ControllingDeviceList");
 				ArrayList<Controllingdevice> ControllingDeviceList = new ArrayList<Controllingdevice>();
-
-				if (controllingDeviceArray.size()>0) {
-					for (int i = 0; i <controllingDeviceArray.size(); i++) {
+				if (DeviceArray.size()>0) {
+					//如果没有设备id输入，则设置id为第一个
+					if(deviceid==0){
+						Controllingdevice firstDevice = (Controllingdevice)JSONObject.toBean(DeviceArray.getJSONObject(0), Controllingdevice.class);
+						deviceid = firstDevice.getControllingDeviceId();
+					}
+					
+					//设备列表
+					for (int i = 0; i <DeviceArray.size(); i++) {
 						Controllingdevice controllingDevice = new Controllingdevice();
-						controllingDevice = (Controllingdevice)JSONObject.toBean(controllingDeviceArray.getJSONObject(i), Controllingdevice.class);
+						controllingDevice = (Controllingdevice)JSONObject.toBean(DeviceArray.getJSONObject(i), Controllingdevice.class);
 						
 						ControllingDeviceList.add(controllingDevice);
 					}
 				}
 				request.setAttribute("ControllingDeviceList", ControllingDeviceList);
 				
+				//选中设备
+				String DeviceString = CloudClient.getInstance().client.getControllingDeviceByDeviceID(deviceid);
+				if (DeviceString.contains("success")) {
+					JSONObject DeviceJsonObject = JSONObject.fromObject(DeviceString); 
+					JSONObject deviceObject = (JSONObject) DeviceJsonObject.get("ControllingDevice");
+					Controllingdevice device = (Controllingdevice)JSONObject.toBean(deviceObject, Controllingdevice.class);
+					request.setAttribute("device", device);
+				}
+//				else {
+//					out.println("<script>alert('参数错误:未找到该传感器!');location.href='DataView';</script>");
+//				}
 				
+				ArrayList<Configlog> ConfigLogList = new ArrayList<Configlog>();
+				String ConfigLogListJsonString = CloudClient.getInstance().client.getConfigLogByDeviceID(deviceid, start_day, end_day, pageSize, (currentPage-1)*pageSize);
+				if (ConfigLogListJsonString.contains("success")) {
+					JSONObject ConfigLogListJsonObject = JSONObject.fromObject(ConfigLogListJsonString);
+					if(ConfigLogListJsonObject.get("ConfigLogList")!=null){
+						JSONArray ConfigLogListArray = ConfigLogListJsonObject.getJSONArray("ConfigLogList");
+						if (ConfigLogListArray.size()>0) {
+							for (int i = 0; i <ConfigLogListArray.size(); i++) {
+								Configlog ConfigLog = new Configlog();
+								ConfigLog = (Configlog)JSONObject.toBean(ConfigLogListArray.getJSONObject(i), Configlog.class);
+							
+								ConfigLogList.add(ConfigLog);
+							}
+						}
+					}
+					request.setAttribute("ConfigLogList", ConfigLogList);
+					count = ConfigLogListJsonObject.getInt("count");
+				}
 				
 				PageBean page = new PageBean();
-			    page.setContentData(ControllingDeviceList);
-			    page.setTotalRecords(jsonObject.getInt("count"));
+			    page.setContentData(ConfigLogList);
+			    page.setTotalRecords(count);
 			    page.setCurrentPage(currentPage);
 			    page.setPageSize(pageSize);
 			     

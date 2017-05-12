@@ -220,7 +220,14 @@
 		}
 
         function toPage(num){
-           location.href=window.location.pathname+'?currentPage='+num+"&deviceid="+getQueryString("deviceid")+"&start_day="+getQueryString("start_day")+"&end_day="+getQueryString("end_day");
+        	var url = window.location.pathname+'?currentPage='+num;
+        	if(getQueryString("deviceid")!=null)
+        		url += "&deviceid="+getQueryString("deviceid");
+        	if(getQueryString("start_day")!=null)
+        		url += "&start_day="+getQueryString("start_day");
+        	if(getQueryString("end_day")!=null)
+        		url += "&end_day="+getQueryString("end_day");
+        	location.href=url;
         }     
     </script>
 
