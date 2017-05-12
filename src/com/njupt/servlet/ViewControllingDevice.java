@@ -2,7 +2,9 @@ package com.njupt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.njupt.bean.Configlog;
 import com.njupt.bean.Configtype;
 import com.njupt.bean.Controllingdevice;
 import com.njupt.client.CloudClient;
@@ -68,6 +71,31 @@ public class ViewControllingDevice extends HttpServlet {
 					}
 				}
 				request.setAttribute("ConfigTypeList", ConfigTypeList);
+				
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.YEAR, +20);
+				String end_day =  format.format(cal.getTime());
+				cal.add(Calendar.YEAR, -40);
+				String start_day = format.format(cal.getTime());
+				
+				ArrayList<Configlog> ConfigLogList = new ArrayList<Configlog>();
+				String ConfigLogListJsonString = CloudClient.getInstance().client.getConfigLogByDeviceID(deviceid, start_day, end_day, 20, 0);
+				if (ConfigLogListJsonString.contains("success")) {
+					JSONObject ConfigLogListJsonObject = JSONObject.fromObject(ConfigLogListJsonString);
+					if(ConfigLogListJsonObject.get("ConfigLogList")!=null){
+						JSONArray ConfigLogListArray = ConfigLogListJsonObject.getJSONArray("ConfigLogList");
+						if (ConfigLogListArray.size()>0) {
+							for (int i = 0; i <ConfigLogListArray.size(); i++) {
+								Configlog ConfigLog = new Configlog();
+								ConfigLog = (Configlog)JSONObject.toBean(ConfigLogListArray.getJSONObject(i), Configlog.class);
+							
+								ConfigLogList.add(ConfigLog);
+							}
+						}
+					}
+					request.setAttribute("ConfigLogList", ConfigLogList);
+				}
 				
 				request.getRequestDispatcher("ViewControllingDevice.jsp").forward(request, response);
 			}

@@ -2,7 +2,9 @@ package com.njupt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +18,7 @@ import net.sf.json.JSONObject;
 
 import com.njupt.bean.Controllingdevice;
 import com.njupt.bean.Datatype;
+import com.njupt.bean.Devicedata;
 import com.njupt.bean.Sensingdevice;
 import com.njupt.client.CloudClient;
 
@@ -69,6 +72,31 @@ public class ViewSensingDevice extends HttpServlet {
 					}
 				}
 				request.setAttribute("DataTypeList", DataTypeList);
+				
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.YEAR, +20);
+				String end_day =  format.format(cal.getTime());
+				cal.add(Calendar.YEAR, -40);
+				String start_day = format.format(cal.getTime());
+				
+				ArrayList<Devicedata> DataLogList = new ArrayList<Devicedata>();
+				String DataLogListJsonString = CloudClient.getInstance().client.getDataLogByDeviceID(deviceid, start_day, end_day, 20,0);
+				if (DataLogListJsonString.contains("success")) {
+					JSONObject DataLogListJsonObject = JSONObject.fromObject(DataLogListJsonString);
+					if(DataLogListJsonObject.get("DataLogList")!=null){
+						JSONArray DataLogListArray = DataLogListJsonObject.getJSONArray("DataLogList");
+						if (DataLogListArray.size()>0) {
+							for (int i = 0; i <DataLogListArray.size(); i++) {
+								Devicedata DataLog = new Devicedata();
+								DataLog = (Devicedata)JSONObject.toBean(DataLogListArray.getJSONObject(i), Devicedata.class);
+							
+								DataLogList.add(DataLog);
+							}
+						}
+					}
+					request.setAttribute("DataLogList", DataLogList);
+				}
 				
 				request.getRequestDispatcher("ViewSensingDevice.jsp").forward(request, response);
 			}

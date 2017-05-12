@@ -1,5 +1,7 @@
   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  
+  <% String[] bg ={"bg-aqua","bg-green","bg-yellow","bg-red"};%>
  
 	<jsp:include page="template/header.jsp" flush="true"/><!--动态包含header-->
 
@@ -218,45 +220,26 @@
                   
                   <div class="tab-pane" id="timeline">
                   <div class="box-header with-border">
-                  <h3 class="box-title">传感器最近十条上传数据</h3>
+                  <h3 class="box-title">传感器最近二十条上传数据</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tbody><tr>
-                      <th style="width: 10px">#</th>
-                      <th>设备</th>
+                      <th>#</th>
                       <th>类型</th>
-                      <th style="width: 40px">值</th>
+                      <th>符号</th>
+                      <th>值</th>
                       <th>时间</th>
                     </tr>
+                    <c:forEach var="DataLog" items="${requestScope.DataLogList}" varStatus="status">
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-red">55%</span></td>
-                      <td>2016-04-14 05:12:25</td>
+                      <td>${status.count}</td>
+                      <td>${DataLog.type}</td>
+                      <td>${DataLog.symbol}</td>
+                      <td><span class="badge bg-green">${DataLog.value}</span></td>
+                      <td>${DataLog.saveTime}</td>
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-yellow">70%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-green">90%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
+                    </c:forEach>
                   </tbody></table>
                 </div><!-- /.box-body -->
                   </div><!-- /.tab-pane -->

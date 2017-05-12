@@ -209,41 +209,23 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">
-                    <tbody><tr>
-                      <th style="width: 10px">#</th>
+                    <tbody>
+                    <tr>
+                      <th>#</th>
                       <th>设备</th>
-                      <th>类型</th>
-                      <th style="width: 40px">值</th>
-                      <th>时间</th>
+                      <th>控制项目</th>
+                      <th>值</th>
+                      <th>指令发出时间</th>
                     </tr>
+                    <c:forEach var="ConfigLog" items="${requestScope.ConfigLogList}" varStatus="status">
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-red">55%</span></td>
-                      <td>2016-04-14 05:12:25</td>
+                      <td>${status.count}</td>
+                      <td>${device.deviceName}</td>
+                      <td>${ConfigLog.configTypeName}</td>
+                      <td>${ConfigLog.configContent}</td>
+                      <td>${ConfigLog.saveTime}</td>
                     </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-yellow">70%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-green">90%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
+					</c:forEach>
                   </tbody></table>
                 </div><!-- /.box-body -->
                   </div><!-- /.tab-pane -->

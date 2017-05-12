@@ -59,8 +59,6 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">传感设备</a></li>
                   <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">控制设备</a></li>
-                  <li class=""><a href="#sensing" data-toggle="tab" aria-expanded="false">最新数据</a></li>
-                  <li class=""><a href="#control" data-toggle="tab" aria-expanded="false">最新日志</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="activity">
@@ -311,91 +309,7 @@
                   
                 </div><!-- /.box-footer -->
                   </div><!-- /.tab-pane -->
-                  
-                <div class="tab-pane" id="sensing">
-                <div class="box-body" >
-                  <table  class="table no-margin">
-                    <tbody><tr>
-                      <th style="width: 10px">#</th>
-                      <th>设备</th>
-                      <th>数据</th>
-                      <th style="width: 40px">值</th>
-                      <th>时间</th>
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-red">55%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-yellow">70%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-green">90%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                  </tbody></table>
-                </div><!-- /.box-body -->
-
-                  </div><!-- /.tab-pane -->
-                  
-                  <div class="tab-pane" id="control">
-					<div class="box-body">
-                  <table  class="table no-margin">
-                    <tbody><tr>
-                      <th style="width: 10px">#</th>
-                      <th>设备</th>
-                      <th>指令</th>
-                      <th style="width: 40px">值</th>
-                      <th>时间</th>
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-red">55%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-yellow">70%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-light-blue">30%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>温度</td>
-                      <td><span class="badge bg-green">90%</span></td>
-                      <td>2016-04-14 05:12:25</td>
-                    </tr>
-                  </tbody></table>
-                </div><!-- /.box-body -->
-                  </div><!-- /.tab-pane -->
+                
                   
                 </div><!-- /.tab-content -->
               </div><!-- /.nav-tabs-custom -->
