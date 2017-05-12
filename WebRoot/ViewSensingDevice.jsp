@@ -72,6 +72,7 @@
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">数据类型</a></li>
+                  <li class=""><a href="#rule" data-toggle="tab" aria-expanded="false">告警规则</a></li>
                   <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">最近数据</a></li>
                 </ul>
                 <div class="tab-content">
@@ -243,6 +244,166 @@
                   </tbody></table>
                 </div><!-- /.box-body -->
                   </div><!-- /.tab-pane -->
+                  
+                  
+                  <div class="tab-pane" id="rule">
+                  <div class="box-body">
+                  <div class="table-responsive">
+                    <table class="table no-margin">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>告警数据类型</th>
+                          <th>告警规则</th>
+                          <th>阈值</th>
+                          <th>操作</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <c:forEach var="DataType" items="${requestScope.DataTypeList}" varStatus="status">
+                        <tr>
+                          <td><a href="#"> ${status.count}</a></td>
+                          <td>${DataType.type}</td>
+                          <td>${DataType.symbol}</td>
+                          <td>
+							<a href="#"><i class="fa fa-fw fa-upload"></i>查看导出</a>
+						  </td>
+                          <td>
+                    		<a href="#" data-toggle="modal" data-target="#edit-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-edit"></i></a>
+                    		
+                    		
+            <div class="modal" id="edit-datatype-${DataType.dataTypeId}"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">修改告警规则</h4>
+                  </div>
+                  <form role="form" method="post" action="EditDataType">
+                  	<div class="modal-body">
+                    	<div class="form-group">
+                    		<label for="exampleInputEmail1">选择数据类型</label>
+                    		<select id="type" name="typeid" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    			<c:forEach var="DataType" items="${requestScope.DataTypeList}" varStatus="status">
+                     	 			<option value="${DataType.dataTypeId}">${DataType.type}</option>
+                     	 		</c:forEach>
+                    		</select>
+                   		</div>
+                    	<div class="form-group">
+                     		<label for="exampleInputEmail1">规则</label>
+                      		<select id="rule" name="rule" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
+                     	 		<option value="=">=</option>
+                     	 		<option value=">">&gt;</option>
+                     	 		<option value="<">&lt;</option>
+                     	 	</select>
+                  		</div>
+                  		<div class="form-group">
+                     		<label for="exampleInputEmail1">阈值</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本规则的阈值" name="threshold">
+                  		</div>
+                  	</div><!-- /.box-body -->
+                  	<div class="modal-footer">
+                    	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    	<input type="hidden" name="typeid" value="${DataType.dataTypeId}"> 
+                        <input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                    	<button type="submit" class="btn btn-primary">修改</button>
+                  	</div>
+                  </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
+            
+                    		
+                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-remove"></i></a>
+                    		
+                    		                    		
+                    	
+                     <div class="modal modal-danger" id="delete-datatype-${DataType.dataTypeId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                              <h4 class="modal-title">告警规则删除</h4>
+                            </div>
+                            <div class="modal-body">
+                             <p>您目前正在删除告警规则“${DataType.type}”</p>
+                             <p>（删除规则会将所包含的数据全部删除，请慎重操作）</p>
+                             <p>请确定是否删除？ </p>
+                            </div>
+                           <div class="modal-footer">
+                           	  <form method="post" action="DeleteDataType">
+                              	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
+                              	<input type="hidden" name="ruleid" value="${DataType.dataTypeId}"> 
+                              	<input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                              	<button type="submit" class="btn btn-outline">删除</button>
+                              </form>
+                            </div>
+                          </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                      </div>
+            
+              		
+                    		
+                          </td>
+                        </tr>
+						</c:forEach>
+						
+                      </tbody>
+                    </table>
+                  </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix" style="display: block;">
+                  <a href="#" class="btn btn-sm btn-info btn-flat pull-right" data-toggle="modal" data-target="#add-rule">增加告警规则</a>
+                  
+                  
+                  
+            <div class="modal" id="add-rule"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">创建告警规则</h4>
+                  </div>
+                  <form role="form" method="post" action="">
+                  	<div class="modal-body">
+                    	<div class="form-group">
+                    		<label for="exampleInputEmail1">选择数据类型</label>
+                    		<select id="type" name="typeid" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    			<c:forEach var="DataType" items="${requestScope.DataTypeList}" varStatus="status">
+                     	 			<option value="${DataType.dataTypeId}">${DataType.type}</option>
+                     	 		</c:forEach>
+                    		</select>
+                   		</div>
+                    	<div class="form-group">
+                     		<label for="exampleInputEmail1">规则</label>
+                      		<select id="rule" name="rule" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
+                     	 		<option value="=">=</option>
+                     	 		<option value=">">&gt;</option>
+                     	 		<option value="<">&lt;</option>
+                     	 	</select>
+                  		</div>
+                  		<div class="form-group">
+                     		<label for="exampleInputEmail1">阈值</label>
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本规则的阈值" name="threshold">
+                  		</div>
+                  	</div><!-- /.box-body -->
+                  	<div class="modal-footer">
+                    	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    	<input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                    	<button type="submit" class="btn btn-primary">创建</button>
+                  	</div>
+                  </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+                  
+                </div><!-- /.box-footer -->
+                  </div><!-- /.tab-pane -->
+                  
+                  
+                  
                 </div><!-- /.tab-content -->
               </div><!-- /.nav-tabs-custom -->
             </div><!-- /.col -->
