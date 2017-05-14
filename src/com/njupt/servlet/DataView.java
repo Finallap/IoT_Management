@@ -17,8 +17,6 @@ import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import com.njupt.bean.Configtype;
-import com.njupt.bean.Controllingdevice;
 import com.njupt.bean.Devicedata;
 import com.njupt.bean.PageBean;
 import com.njupt.bean.Sensingdevice;
