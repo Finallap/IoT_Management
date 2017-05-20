@@ -12,13 +12,12 @@ public class AlarmRule implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private Integer AlarmRuleID;
-	private Integer SensingDeviceID;
-	private Integer UserID;
-	private Integer DataTypeID;
-	private String Rule;
-	private Float Threshold;
+	private Integer alarmRuleID;
+	private Integer sensingDeviceID;
+	private Integer userID;
+	private Integer dataTypeID;
+	private String rule;
+	private Float threshold;
 
 	// Constructors
 
@@ -30,60 +29,60 @@ public class AlarmRule implements java.io.Serializable {
 	public AlarmRule(Integer alarmRuleID, Integer sensingDeviceID,
 			Integer userID, Integer dataTypeID, String rule, Float threshold) {
 		super();
-		AlarmRuleID = alarmRuleID;
-		SensingDeviceID = sensingDeviceID;
-		UserID = userID;
-		DataTypeID = dataTypeID;
-		Rule = rule;
-		Threshold = threshold;
+		this.alarmRuleID = alarmRuleID;
+		this.sensingDeviceID = sensingDeviceID;
+		this.userID = userID;
+		this.dataTypeID = dataTypeID;
+		this.rule = rule;
+		this.threshold = threshold;
 	}
 
 	public Integer getAlarmRuleID() {
-		return AlarmRuleID;
+		return alarmRuleID;
 	}
 
 	public void setAlarmRuleID(Integer alarmRuleID) {
-		AlarmRuleID = alarmRuleID;
+		this.alarmRuleID = alarmRuleID;
 	}
 
 	public Integer getSensingDeviceID() {
-		return SensingDeviceID;
+		return sensingDeviceID;
 	}
 
 	public void setSensingDeviceID(Integer sensingDeviceID) {
-		SensingDeviceID = sensingDeviceID;
+		this.sensingDeviceID = sensingDeviceID;
 	}
 
 	public Integer getUserID() {
-		return UserID;
+		return userID;
 	}
 
 	public void setUserID(Integer userID) {
-		UserID = userID;
+		this.userID = userID;
 	}
 
 	public Integer getDataTypeID() {
-		return DataTypeID;
+		return dataTypeID;
 	}
 
 	public void setDataTypeID(Integer dataTypeID) {
-		DataTypeID = dataTypeID;
+		this.dataTypeID = dataTypeID;
 	}
 
 	public String getRule() {
-		return Rule;
+		return rule;
 	}
 
 	public void setRule(String rule) {
-		Rule = rule;
+		this.rule = rule;
 	}
 
 	public Float getThreshold() {
-		return Threshold;
+		return threshold;
 	}
 
 	public void setThreshold(Float threshold) {
-		Threshold = threshold;
+		this.threshold = threshold;
 	}
-
+	
 }

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.njupt.bean.AlarmRule;
 import com.njupt.bean.Controllingdevice;
 import com.njupt.bean.Datatype;
 import com.njupt.bean.Devicedata;
@@ -96,6 +97,25 @@ public class ViewSensingDevice extends HttpServlet {
 						}
 					}
 					request.setAttribute("DataLogList", DataLogList);
+				}
+				
+				ArrayList<AlarmRule> AlarmRuleList = new ArrayList<AlarmRule>();
+				String AlarmRuleListJsonString = CloudClient.getInstance().client.getAlarmRuleListByDeviceID(deviceid);
+				if (DataLogListJsonString.contains("success")) {
+					JSONObject AlarmRuleListJsonObject = JSONObject.fromObject(AlarmRuleListJsonString);
+					if(AlarmRuleListJsonObject.get("AlarmRuleList")!=null){
+						JSONArray AlarmRuleListArray = AlarmRuleListJsonObject.getJSONArray("AlarmRuleList");
+						if (AlarmRuleListArray.size()>0) {
+							for (int i = 0; i <AlarmRuleListArray.size(); i++) {
+								AlarmRule alarmRule = new AlarmRule();
+								alarmRule = (AlarmRule)JSONObject.toBean(AlarmRuleListArray.getJSONObject(i), AlarmRule.class);
+							
+								AlarmRuleList.add(alarmRule);
+							}
+						}
+					}
+					System.out.println(AlarmRuleListJsonString);
+					request.setAttribute("AlarmRuleList", AlarmRuleList);
 				}
 				
 				request.getRequestDispatcher("ViewSensingDevice.jsp").forward(request, response);

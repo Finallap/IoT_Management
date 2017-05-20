@@ -260,19 +260,17 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <c:forEach var="DataType" items="${requestScope.DataTypeList}" varStatus="status">
+                      <c:forEach var="AlarmRule" items="${requestScope.AlarmRuleList}" varStatus="status">
                         <tr>
                           <td><a href="#"> ${status.count}</a></td>
-                          <td>${DataType.type}</td>
-                          <td>${DataType.symbol}</td>
+                          <td>${AlarmRule.dataTypeID}</td>
+                          <td>${AlarmRule.rule}</td>
+                          <td>${AlarmRule.threshold}</td>
                           <td>
-							<a href="#"><i class="fa fa-fw fa-upload"></i>查看导出</a>
-						  </td>
-                          <td>
-                    		<a href="#" data-toggle="modal" data-target="#edit-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-edit"></i></a>
+                    		<a href="#" data-toggle="modal" data-target="#edit-alarmrule-${AlarmRule.alarmRuleID}"><i class="fa fa-fw fa-edit"></i></a>
                     		
                     		
-            <div class="modal" id="edit-datatype-${DataType.dataTypeId}"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal" id="edit-alarmrule-${AlarmRule.alarmRuleID}"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -285,16 +283,17 @@
                     		<label for="exampleInputEmail1">选择数据类型</label>
                     		<select id="type" name="typeid" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
                     			<c:forEach var="DataType" items="${requestScope.DataTypeList}" varStatus="status">
-                     	 			<option value="${DataType.dataTypeId}">${DataType.type}</option>
+                     	 			<option value="${DataType.dataTypeId}" <c:if test="${AlarmRule.dataTypeID==DataType.dataTypeId}"> selected="selected" </c:if> >${DataType.type}</option>
                      	 		</c:forEach>
                     		</select>
                    		</div>
                     	<div class="form-group">
                      		<label for="exampleInputEmail1">规则</label>
                       		<select id="rule" name="rule" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
-                     	 		<option value="=">=</option>
-                     	 		<option value=">">&gt;</option>
-                     	 		<option value="<">&lt;</option>
+                     	 		<option value="=" <c:if test="${AlarmRule.rule=='='}"> selected="selected" </c:if> >=</option>
+                     	 		<option value="&gt;" <c:if test="${AlarmRule.rule=='>'}"> selected="selected" </c:if> >&gt;</option>
+                     	 		<option value="&lt;" <c:if test="${AlarmRule.rule=='<'}"> selected="selected" </c:if> >&lt;</option>
+                     	 		
                      	 	</select>
                   		</div>
                   		<div class="form-group">
@@ -304,8 +303,7 @@
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
                     	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                    	<input type="hidden" name="typeid" value="${DataType.dataTypeId}"> 
-                        <input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                    	<input type="hidden" name="alarmruleid" value="${AlarmRule.alarmRuleID}"> 
                     	<button type="submit" class="btn btn-primary">修改</button>
                   	</div>
                   </form>
@@ -315,11 +313,11 @@
             
             
                     		
-                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${DataType.dataTypeId}"><i class="fa fa-fw fa-remove"></i></a>
+                    		<a href="#"  data-toggle="modal" data-target="#delete-datatype-${AlarmRule.alarmRuleID}"><i class="fa fa-fw fa-remove"></i></a>
                     		
                     		                    		
                     	
-                     <div class="modal modal-danger" id="delete-datatype-${DataType.dataTypeId}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                     <div class="modal modal-danger" id="delete-datatype-${AlarmRule.alarmRuleID}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                          <div class="modal-content">
                            <div class="modal-header">
@@ -332,10 +330,10 @@
                              <p>请确定是否删除？ </p>
                             </div>
                            <div class="modal-footer">
-                           	  <form method="post" action="DeleteDataType">
+                           	  <form method="post" action="DeleteAlarmRule">
                               	<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">否</button>
-                              	<input type="hidden" name="ruleid" value="${DataType.dataTypeId}"> 
                               	<input type="hidden" name="deviceid" value="${device.sensingDeviceId}"> 
+                              	<input type="hidden" name="alarmruleid" value="${AlarmRule.alarmRuleID}"> 
                               	<button type="submit" class="btn btn-outline">删除</button>
                               </form>
                             </div>
@@ -365,7 +363,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">创建告警规则</h4>
                   </div>
-                  <form role="form" method="post" action="">
+                  <form role="form" method="post" action="AddAlarmRule">
                   	<div class="modal-body">
                     	<div class="form-group">
                     		<label for="exampleInputEmail1">选择数据类型</label>
@@ -379,8 +377,8 @@
                      		<label for="exampleInputEmail1">规则</label>
                       		<select id="rule" name="rule" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
                      	 		<option value="=">=</option>
-                     	 		<option value=">">&gt;</option>
-                     	 		<option value="<">&lt;</option>
+                     	 		<option value="&gt;">&gt;</option>
+                     	 		<option value="&lt;">&lt;</option>
                      	 	</select>
                   		</div>
                   		<div class="form-group">
