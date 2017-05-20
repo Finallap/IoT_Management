@@ -263,7 +263,7 @@
                       <c:forEach var="AlarmRule" items="${requestScope.AlarmRuleList}" varStatus="status">
                         <tr>
                           <td><a href="#"> ${status.count}</a></td>
-                          <td>${AlarmRule.dataTypeID}</td>
+                          <td>${AlarmRule.dataTypeName}</td>
                           <td>${AlarmRule.rule}</td>
                           <td>${AlarmRule.threshold}</td>
                           <td>
@@ -277,8 +277,10 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">修改告警规则</h4>
                   </div>
-                  <form role="form" method="post" action="EditDataType">
+                  <form role="form" method="post" action="EditAlarmRule">
                   	<div class="modal-body">
+                  	
+                  		<!--
                     	<div class="form-group">
                     		<label for="exampleInputEmail1">选择数据类型</label>
                     		<select id="type" name="typeid" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
@@ -287,6 +289,8 @@
                      	 		</c:forEach>
                     		</select>
                    		</div>
+                   		-->
+                   		
                     	<div class="form-group">
                      		<label for="exampleInputEmail1">规则</label>
                       		<select id="rule" name="rule" class="form-control select2 select2-hidden-accessible"  style="width: 100%;" tabindex="-1" aria-hidden="true">
@@ -298,12 +302,13 @@
                   		</div>
                   		<div class="form-group">
                      		<label for="exampleInputEmail1">阈值</label>
-                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本规则的阈值" name="threshold">
+                      		<input type=text class="form-control" id="exampleInputEmail2" placeholder="输入传感设备对于本规则的阈值" name="threshold" value="${AlarmRule.threshold}">
                   		</div>
                   	</div><!-- /.box-body -->
                   	<div class="modal-footer">
                     	<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                    	<input type="hidden" name="alarmruleid" value="${AlarmRule.alarmRuleID}"> 
+                    	<input type="hidden" name="alarmruleid" value="${AlarmRule.alarmRuleID}">
+                    	<input type="hidden" name="deviceid" value="${device.sensingDeviceId}">  
                     	<button type="submit" class="btn btn-primary">修改</button>
                   	</div>
                   </form>

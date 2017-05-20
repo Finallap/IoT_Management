@@ -18,6 +18,7 @@ public class AlarmRule implements java.io.Serializable {
 	private Integer dataTypeID;
 	private String rule;
 	private Float threshold;
+	private String dataTypeName;
 
 	// Constructors
 
@@ -27,7 +28,8 @@ public class AlarmRule implements java.io.Serializable {
 
 	/** full constructor */
 	public AlarmRule(Integer alarmRuleID, Integer sensingDeviceID,
-			Integer userID, Integer dataTypeID, String rule, Float threshold) {
+			Integer userID, Integer dataTypeID, String rule, Float threshold,
+			String dataTypeName) {
 		super();
 		this.alarmRuleID = alarmRuleID;
 		this.sensingDeviceID = sensingDeviceID;
@@ -35,6 +37,7 @@ public class AlarmRule implements java.io.Serializable {
 		this.dataTypeID = dataTypeID;
 		this.rule = rule;
 		this.threshold = threshold;
+		this.dataTypeName = dataTypeName;
 	}
 
 	public Integer getAlarmRuleID() {
@@ -84,5 +87,12 @@ public class AlarmRule implements java.io.Serializable {
 	public void setThreshold(Float threshold) {
 		this.threshold = threshold;
 	}
-	
+
+	public String getDataTypeName() {
+		return dataTypeName;
+	}
+
+	public void setDataTypeName(String dataTypeName) {
+		this.dataTypeName = dataTypeName;
+	}
 }
