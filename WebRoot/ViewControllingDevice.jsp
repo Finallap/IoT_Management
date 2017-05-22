@@ -105,21 +105,24 @@
                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                               <h4 class="modal-title">发起控制</h4>
                             </div>
+                            <form role="form" method="post" action="StartControl">
                             <div class="modal-body">
-                             <p>您目前正在删除控制项目“${ConfigType.configTypeName}”</p>
-                             <p>（删除控制项目会将该项目有关的所有日志全部删除，请慎重操作）</p>
-                             <p>请确定是否删除？ </p>
+                             <p>您目前正在发起项目“${ConfigType.configTypeName}的控制”</p>
+                             <p>（若控制指令要无须参数，则下面框内不填写内容）</p>
+                             <p>请确定是否发起控制？ </p>
                              <div class="form-group">
-                      			<label for="exampleInputEmail1">项目名称</label>
-                      			<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
+                      			<label for="exampleInputEmail1">控制参数：</label>
+                      			<input type=text class="form-control" id="exampleInputEmail1" placeholder="输入控制参数" name="parameter">
                     		</div>
                             </div>
                            <div class="modal-footer">
                     			<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
                     			<input type="hidden" name="typeid" value="${ConfigType.configTypeId}"> 
+                    			<input type="hidden" name="mark" value="${ConfigType.mark}">
                         		<input type="hidden" name="deviceid" value="${device.controllingDeviceId}"> 
                     			<button type="submit" class="btn btn-primary">发起控制</button>
                   			</div>
+                  			</form>
                           </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                       </div>
