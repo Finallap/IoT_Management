@@ -71,7 +71,6 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">控制项目</a></li>
                   <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">最近日志</a></li>
-                  <li class=""><a href="#control" data-toggle="tab" aria-expanded="false">发起控制</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane active" id="activity">
@@ -265,29 +264,6 @@
 					</c:forEach>
                   </tbody></table>
                 </div><!-- /.box-body -->
-                  </div><!-- /.tab-pane -->
-                  
-                  <div class="tab-pane" id="control">
-                <!-- form start -->
-                <form role="form" method="post" action="">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">项目名称</label>
-                      <input type=text class="form-control" id="exampleInputEmail1" placeholder="输入项目名称">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">项目Key</label>
-                      <input type=text class="form-control" id="exampleInputEmail2" placeholder="输入项目Key">
-                    </div>
-                  </div><!-- /.box-body -->
-
-                  <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">发起控制指令</button>
-                    <br><br>
-                    <label for="exampleInputEmail1">（注：若想不发起某些项控制，则相应的框空白即可。）</label>
-                  </div>
-                </form>
-
                   </div><!-- /.tab-pane -->
                   
                 </div><!-- /.tab-content -->

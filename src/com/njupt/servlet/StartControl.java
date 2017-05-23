@@ -51,7 +51,7 @@ public class StartControl extends HttpServlet {
 		try {
 			String result = CloudClient.getInstance().client.addConfigLog(typeid, ConfigContent);
 			if (result.contains("success")) {
-				out.println("<script>alert('控制项目修改成功!');location.href='ViewControllingDevice?deviceid="+deviceid+"';</script>");
+				out.println("<script>alert('控制发起成功!');location.href='ViewControllingDevice?deviceid="+deviceid+"';</script>");
 			}
 			else if(result.contains("exist")){
 				out.println("<script>alert('控制类型不存在!');location.href='ViewControllingDevice?deviceid="+deviceid+"';</script>");

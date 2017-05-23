@@ -55,8 +55,9 @@ public class DataView extends HttpServlet {
 		
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, +1);
 		String end_day =  format.format(cal.getTime());
-		cal.add(Calendar.DAY_OF_MONTH, -21);
+		cal.add(Calendar.DAY_OF_MONTH, -22);
 		String start_day = format.format(cal.getTime());
 
 		for (String key : params.keySet()) {
