@@ -68,11 +68,11 @@
             
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-              	<a href="SensingDeviceProfile?currentPage=1">
+              	<a href="AlarmProfile">
                 	<span class="info-box-icon bg-red"><i class="ion ion-ios-information-outline"></i></span>
                 </a>
                 <div class="info-box-content">
-                  <a href="SensingDeviceProfile?currentPage=1">
+                  <a href="AlarmProfile">
                   	<span class="info-box-text">未处理告警</span>
                   	<span class="info-box-number">2,000</span>
                   </a>
