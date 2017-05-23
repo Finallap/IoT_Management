@@ -21,19 +21,28 @@
           <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+              	<a href="ProjectProfile">
+                	<span class="info-box-icon bg-aqua"><i class="fa fa-fw fa-list-alt"></i></span>
+                </a>
                 <div class="info-box-content">
-                  <span class="info-box-text">项目</span>
-                  <span class="info-box-number">90<small>%</small></span>
+                  <a href="ProjectProfile">
+                  	<span class="info-box-text">项目</span>
+                  	<span class="info-box-number">${ProjectNum}</span>
+                  </a>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
+            
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+              	<a href="SensingDeviceProfile?currentPage=1">
+                	<span class="info-box-icon bg-yellow"><i class="fa fa-fw fa-gg-circle"></i></span>
+                </a>
                 <div class="info-box-content">
-                  <span class="info-box-text">设备</span>
-                  <span class="info-box-number">41,410</span>
+                  <a href="SensingDeviceProfile?currentPage=1">
+                  	<span class="info-box-text">传感设备</span>
+                  	<span class="info-box-number">${SensingDeviceNum}</span>
+                  </a>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -41,21 +50,32 @@
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
 
+			
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                <a href="ControllingDeviceProfile?currentPage=1">
+                	<span class="info-box-icon bg-green"><i class="fa fa-fw fa-external-link-square"></i></span>
+                </a>
                 <div class="info-box-content">
-                  <span class="info-box-text">应用</span>
-                  <span class="info-box-number">760</span>
+                  <a href="ControllingDeviceProfile?currentPage=1">
+                  	<span class="info-box-text">控制设备</span>
+                  	<span class="info-box-number">${ControllingDeviceNum}</span>
+                  </a>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
+            
+            
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+              	<a href="SensingDeviceProfile?currentPage=1">
+                	<span class="info-box-icon bg-red"><i class="ion ion-ios-information-outline"></i></span>
+                </a>
                 <div class="info-box-content">
-                  <span class="info-box-text">添加项目</span>
-                  <span class="info-box-number">2,000</span>
+                  <a href="SensingDeviceProfile?currentPage=1">
+                  	<span class="info-box-text">未处理告警</span>
+                  	<span class="info-box-number">2,000</span>
+                  </a>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->

@@ -143,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">账号管理</a>
+                      <a href="ChangePassword" class="btn btn-default btn-flat">修改密码</a>
                     </div>
                     <div class="pull-right">
                       <a href="Logout" class="btn btn-default btn-flat">注销</a>
@@ -178,6 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">请选择功能</li>
             <!-- Optionally, you can add icons to the links -->
+            <li><a href="index"><i class="fa fa-fw fa-home"></i> <span>首页</span></a></li>
             <li><a href="ProjectProfile"><i class="fa fa-fw fa-list-alt"></i> <span>我的项目</span></a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-fw fa-gg-circle"></i> <span>我的传感器</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -193,7 +194,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li><a href="LogView">控制日志查看</a></li>
               </ul>
             </li>
-            <li><a href="#"><i class="fa fa-fw fa-group"></i> <span>账号管理</span></a></li>
+            <li><a href="AlarmProfile"><i class="fa fa-fw fa-info-circle"></i> <span>我的告警</span></a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-fw fa-list-alt"></i> <span>系统介绍</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
