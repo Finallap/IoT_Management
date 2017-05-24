@@ -90,25 +90,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li><!-- /.messages-menu -->
 
               <!-- Notifications Menu -->
-              <li class="dropdown notifications-menu">
-                <!-- Menu toggle button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">0</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header">你有0个告警等待处理。</li>
-                  <li>
-                    <!-- Inner Menu: contains the notifications -->
-                    <ul class="menu">
-                      <li><!-- start notification -->
-						
-                      </li><!-- end notification -->
-                    </ul>
-                  </li>
-                  <li class="footer"><a href="#">查看全部告警</a></li>
-                </ul>
-              </li>
+
+
               <!-- User Account Menu -->
               <li class="dropdown user user-menu">
                 <!-- Menu Toggle Button -->

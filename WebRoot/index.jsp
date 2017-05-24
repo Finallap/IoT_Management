@@ -73,8 +73,8 @@
                 </a>
                 <div class="info-box-content">
                   <a href="AlarmProfile">
-                  	<span class="info-box-text">未处理告警</span>
-                  	<span class="info-box-number">2,000</span>
+                  	<span class="info-box-text">近期告警</span>
+                  	<span class="info-box-number">${AlarmDataNum}</span>
                   </a>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->

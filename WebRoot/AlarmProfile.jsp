@@ -33,6 +33,7 @@
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">数据单位</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">告警规则</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">实际值</th>
+                      	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">操作</th>
                       	<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">发生时间</th>
                       </tr>
                     </thead>
@@ -40,11 +41,12 @@
                     	<c:forEach var="AlarmData" items="${requestScope.pagebean.contentData}" varStatus="status">  
                      		<tr role="row" class="odd">
                     		<td>${status.count}</td>
-                        	<td class="sorting_1">${AlarmData.deviceName}</td>
+                        	<td>${AlarmData.deviceName}</td>
                         	<td>${AlarmData.type}</td>
                         	<td>${AlarmData.symbol}</td>
                         	<td>${AlarmData.alarmRuleContent}</td>
-                        	<td><span class="badge bg-green">${AlarmData.actualValue}</span></td>
+                        	<td><span class="badge bg-red">${AlarmData.actualValue}</span></td>
+                        	<td><a href="ViewSensingDevice?deviceid=${AlarmData.sensingDeviceId}"><i class="fa fa-fw fa-search"></i>查看传感器</a></td>
                         	<td>${AlarmData.saveTime}</td>
                       		</tr>
                     	</c:forEach>

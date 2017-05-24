@@ -2,7 +2,9 @@ package com.njupt.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,6 +45,13 @@ public class index extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.YEAR, +20);
+		String end_day =  format.format(cal.getTime());
+		cal.add(Calendar.YEAR, -40);
+		String start_day = format.format(cal.getTime());
+		
 		try {
 			int userid =  Integer.parseInt(session.getAttribute("userid").toString());
 			
@@ -58,6 +67,10 @@ public class index extends HttpServlet {
 			JSONObject ControllingDeviceNumJsonObject = JSONObject.fromObject(ControllingDeviceNumJsonString);
 			request.setAttribute("ControllingDeviceNum", ControllingDeviceNumJsonObject.getInt("ControllingDeviceNum"));
 				
+			String AlarmDataJsonString = CloudClient.getInstance().client.getAlarmDataByUserID(userid,start_day,end_day, -1,0);
+			JSONObject AlarmDataJsonObject = JSONObject.fromObject(AlarmDataJsonString);
+			request.setAttribute("AlarmDataNum", AlarmDataJsonObject.getInt("count"));
+			
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 
 		} catch (Exception e) {
