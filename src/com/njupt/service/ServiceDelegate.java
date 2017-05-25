@@ -109,22 +109,6 @@ public interface ServiceDelegate {
 
 	/**
 	 * 
-	 * @param arg2
-	 * @param arg1
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "addConfigType", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddConfigType")
-	@ResponseWrapper(localName = "addConfigTypeResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddConfigTypeResponse")
-	public String addConfigType(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0,
-			@WebParam(name = "arg1", targetNamespace = "") String arg1,
-			@WebParam(name = "arg2", targetNamespace = "") String arg2);
-
-	/**
-	 * 
 	 * @param arg4
 	 * @param arg3
 	 * @param arg2
@@ -145,6 +129,22 @@ public interface ServiceDelegate {
 
 	/**
 	 * 
+	 * @param arg2
+	 * @param arg1
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "addConfigType", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddConfigType")
+	@ResponseWrapper(localName = "addConfigTypeResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddConfigTypeResponse")
+	public String addConfigType(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0,
+			@WebParam(name = "arg1", targetNamespace = "") String arg1,
+			@WebParam(name = "arg2", targetNamespace = "") String arg2);
+
+	/**
+	 * 
 	 * @param arg1
 	 * @param arg0
 	 * @return returns java.lang.String
@@ -156,6 +156,30 @@ public interface ServiceDelegate {
 	public String addConfigLog(
 			@WebParam(name = "arg0", targetNamespace = "") int arg0,
 			@WebParam(name = "arg1", targetNamespace = "") String arg1);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "addDataLog", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddDataLog")
+	@ResponseWrapper(localName = "addDataLogResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddDataLogResponse")
+	public String addDataLog(
+			@WebParam(name = "arg0", targetNamespace = "") String arg0);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "countProject", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountProject")
+	@ResponseWrapper(localName = "countProjectResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountProjectResponse")
+	public String countProject(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
 
 	/**
 	 * 
@@ -182,10 +206,26 @@ public interface ServiceDelegate {
 	 */
 	@WebMethod
 	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "countProject", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountProject")
-	@ResponseWrapper(localName = "countProjectResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountProjectResponse")
-	public String countProject(
+	@RequestWrapper(localName = "getProjectByProjectID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetProjectByProjectID")
+	@ResponseWrapper(localName = "getProjectByProjectIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetProjectByProjectIDResponse")
+	public String getProjectByProjectID(
 			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
+	 * @param arg2
+	 * @param arg1
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "queryUserSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserSensingDevice")
+	@ResponseWrapper(localName = "queryUserSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserSensingDeviceResponse")
+	public String queryUserSensingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0,
+			@WebParam(name = "arg1", targetNamespace = "") int arg1,
+			@WebParam(name = "arg2", targetNamespace = "") int arg2);
 
 	/**
 	 * 
@@ -206,122 +246,6 @@ public interface ServiceDelegate {
 			@WebParam(name = "arg2", targetNamespace = "") String arg2,
 			@WebParam(name = "arg3", targetNamespace = "") int arg3,
 			@WebParam(name = "arg4", targetNamespace = "") int arg4);
-
-	/**
-	 * 
-	 * @param arg2
-	 * @param arg1
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "queryUserSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserSensingDevice")
-	@ResponseWrapper(localName = "queryUserSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserSensingDeviceResponse")
-	public String queryUserSensingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0,
-			@WebParam(name = "arg1", targetNamespace = "") int arg1,
-			@WebParam(name = "arg2", targetNamespace = "") int arg2);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "getConfigTypeListByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetConfigTypeListByDeviceID")
-	@ResponseWrapper(localName = "getConfigTypeListByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetConfigTypeListByDeviceIDResponse")
-	public String getConfigTypeListByDeviceID(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "getProjectByProjectID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetProjectByProjectID")
-	@ResponseWrapper(localName = "getProjectByProjectIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetProjectByProjectIDResponse")
-	public String getProjectByProjectID(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg2
-	 * @param arg1
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "queryUserControllingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserControllingDevice")
-	@ResponseWrapper(localName = "queryUserControllingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserControllingDeviceResponse")
-	public String queryUserControllingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0,
-			@WebParam(name = "arg1", targetNamespace = "") int arg1,
-			@WebParam(name = "arg2", targetNamespace = "") int arg2);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "deleteSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteSensingDevice")
-	@ResponseWrapper(localName = "deleteSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteSensingDeviceResponse")
-	public String deleteSensingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "getUserByUserName", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetUserByUserName")
-	@ResponseWrapper(localName = "getUserByUserNameResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetUserByUserNameResponse")
-	public String getUserByUserName(
-			@WebParam(name = "arg0", targetNamespace = "") String arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "deleteAlarmRule", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteAlarmRule")
-	@ResponseWrapper(localName = "deleteAlarmRuleResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteAlarmRuleResponse")
-	public String deleteAlarmRule(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg5
-	 * @param arg4
-	 * @param arg3
-	 * @param arg2
-	 * @param arg1
-	 * @param arg0
-	 * @param arg6
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "addSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddSensingDevice")
-	@ResponseWrapper(localName = "addSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddSensingDeviceResponse")
-	public String addSensingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0,
-			@WebParam(name = "arg1", targetNamespace = "") String arg1,
-			@WebParam(name = "arg2", targetNamespace = "") String arg2,
-			@WebParam(name = "arg3", targetNamespace = "") String arg3,
-			@WebParam(name = "arg4", targetNamespace = "") String arg4,
-			@WebParam(name = "arg5", targetNamespace = "") String arg5,
-			@WebParam(name = "arg6", targetNamespace = "") String arg6);
 
 	/**
 	 * 
@@ -350,10 +274,134 @@ public interface ServiceDelegate {
 	 */
 	@WebMethod
 	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "getConfigTypeListByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetConfigTypeListByDeviceID")
+	@ResponseWrapper(localName = "getConfigTypeListByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetConfigTypeListByDeviceIDResponse")
+	public String getConfigTypeListByDeviceID(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "deleteSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteSensingDevice")
+	@ResponseWrapper(localName = "deleteSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteSensingDeviceResponse")
+	public String deleteSensingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "deleteAlarmRule", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteAlarmRule")
+	@ResponseWrapper(localName = "deleteAlarmRuleResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteAlarmRuleResponse")
+	public String deleteAlarmRule(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
 	@RequestWrapper(localName = "getDataTypeListByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetDataTypeListByDeviceID")
 	@ResponseWrapper(localName = "getDataTypeListByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetDataTypeListByDeviceIDResponse")
 	public String getDataTypeListByDeviceID(
 			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
+	 * @param arg5
+	 * @param arg4
+	 * @param arg3
+	 * @param arg2
+	 * @param arg1
+	 * @param arg0
+	 * @param arg6
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "addSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddSensingDevice")
+	@ResponseWrapper(localName = "addSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddSensingDeviceResponse")
+	public String addSensingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0,
+			@WebParam(name = "arg1", targetNamespace = "") String arg1,
+			@WebParam(name = "arg2", targetNamespace = "") String arg2,
+			@WebParam(name = "arg3", targetNamespace = "") String arg3,
+			@WebParam(name = "arg4", targetNamespace = "") String arg4,
+			@WebParam(name = "arg5", targetNamespace = "") String arg5,
+			@WebParam(name = "arg6", targetNamespace = "") String arg6);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "getUserByUserName", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetUserByUserName")
+	@ResponseWrapper(localName = "getUserByUserNameResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetUserByUserNameResponse")
+	public String getUserByUserName(
+			@WebParam(name = "arg0", targetNamespace = "") String arg0);
+
+	/**
+	 * 
+	 * @param arg2
+	 * @param arg1
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "queryUserControllingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserControllingDevice")
+	@ResponseWrapper(localName = "queryUserControllingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.QueryUserControllingDeviceResponse")
+	public String queryUserControllingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0,
+			@WebParam(name = "arg1", targetNamespace = "") int arg1,
+			@WebParam(name = "arg2", targetNamespace = "") int arg2);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "getSensingDeviceByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceByDeviceID")
+	@ResponseWrapper(localName = "getSensingDeviceByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceByDeviceIDResponse")
+	public String getSensingDeviceByDeviceID(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
+	 * @param arg5
+	 * @param arg4
+	 * @param arg3
+	 * @param arg2
+	 * @param arg1
+	 * @param arg0
+	 * @param arg6
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "addControllingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddControllingDevice")
+	@ResponseWrapper(localName = "addControllingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddControllingDeviceResponse")
+	public String addControllingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0,
+			@WebParam(name = "arg1", targetNamespace = "") String arg1,
+			@WebParam(name = "arg2", targetNamespace = "") String arg2,
+			@WebParam(name = "arg3", targetNamespace = "") String arg3,
+			@WebParam(name = "arg4", targetNamespace = "") String arg4,
+			@WebParam(name = "arg5", targetNamespace = "") String arg5,
+			@WebParam(name = "arg6", targetNamespace = "") String arg6);
 
 	/**
 	 * 
@@ -382,50 +430,10 @@ public interface ServiceDelegate {
 	 */
 	@WebMethod
 	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "deleteConfigType", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteConfigType")
-	@ResponseWrapper(localName = "deleteConfigTypeResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteConfigTypeResponse")
-	public String deleteConfigType(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
 	@RequestWrapper(localName = "getAlarmRuleListByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetAlarmRuleListByDeviceID")
 	@ResponseWrapper(localName = "getAlarmRuleListByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetAlarmRuleListByDeviceIDResponse")
 	public String getAlarmRuleListByDeviceID(
 			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "getSensingDeviceByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceByDeviceID")
-	@ResponseWrapper(localName = "getSensingDeviceByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceByDeviceIDResponse")
-	public String getSensingDeviceByDeviceID(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg2
-	 * @param arg1
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "updateAlarmRule", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.UpdateAlarmRule")
-	@ResponseWrapper(localName = "updateAlarmRuleResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.UpdateAlarmRuleResponse")
-	public String updateAlarmRule(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0,
-			@WebParam(name = "arg1", targetNamespace = "") String arg1,
-			@WebParam(name = "arg2", targetNamespace = "") float arg2);
 
 	/**
 	 * 
@@ -450,6 +458,34 @@ public interface ServiceDelegate {
 			@WebParam(name = "arg4", targetNamespace = "") String arg4,
 			@WebParam(name = "arg5", targetNamespace = "") String arg5,
 			@WebParam(name = "arg6", targetNamespace = "") String arg6);
+
+	/**
+	 * 
+	 * @param arg2
+	 * @param arg1
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "updateAlarmRule", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.UpdateAlarmRule")
+	@ResponseWrapper(localName = "updateAlarmRuleResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.UpdateAlarmRuleResponse")
+	public String updateAlarmRule(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0,
+			@WebParam(name = "arg1", targetNamespace = "") String arg1,
+			@WebParam(name = "arg2", targetNamespace = "") float arg2);
+
+	/**
+	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "countUserControllingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserControllingDevice")
+	@ResponseWrapper(localName = "countUserControllingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserControllingDeviceResponse")
+	public String countUserControllingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
 
 	/**
 	 * 
@@ -483,27 +519,15 @@ public interface ServiceDelegate {
 
 	/**
 	 * 
-	 * @param arg5
-	 * @param arg4
-	 * @param arg3
-	 * @param arg2
-	 * @param arg1
 	 * @param arg0
-	 * @param arg6
 	 * @return returns java.lang.String
 	 */
 	@WebMethod
 	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "addControllingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddControllingDevice")
-	@ResponseWrapper(localName = "addControllingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.AddControllingDeviceResponse")
-	public String addControllingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0,
-			@WebParam(name = "arg1", targetNamespace = "") String arg1,
-			@WebParam(name = "arg2", targetNamespace = "") String arg2,
-			@WebParam(name = "arg3", targetNamespace = "") String arg3,
-			@WebParam(name = "arg4", targetNamespace = "") String arg4,
-			@WebParam(name = "arg5", targetNamespace = "") String arg5,
-			@WebParam(name = "arg6", targetNamespace = "") String arg6);
+	@RequestWrapper(localName = "countUserSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserSensingDevice")
+	@ResponseWrapper(localName = "countUserSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserSensingDeviceResponse")
+	public String countUserSensingDevice(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
 
 	/**
 	 * 
@@ -543,6 +567,18 @@ public interface ServiceDelegate {
 
 	/**
 	 * 
+	 * @param arg0
+	 * @return returns java.lang.String
+	 */
+	@WebMethod
+	@WebResult(targetNamespace = "")
+	@RequestWrapper(localName = "deleteConfigType", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteConfigType")
+	@ResponseWrapper(localName = "deleteConfigTypeResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.DeleteConfigTypeResponse")
+	public String deleteConfigType(
+			@WebParam(name = "arg0", targetNamespace = "") int arg0);
+
+	/**
+	 * 
 	 * @param arg2
 	 * @param arg1
 	 * @param arg0
@@ -564,33 +600,9 @@ public interface ServiceDelegate {
 	 */
 	@WebMethod
 	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "countUserSensingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserSensingDevice")
-	@ResponseWrapper(localName = "countUserSensingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserSensingDeviceResponse")
-	public String countUserSensingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "countUserControllingDevice", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserControllingDevice")
-	@ResponseWrapper(localName = "countUserControllingDeviceResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.CountUserControllingDeviceResponse")
-	public String countUserControllingDevice(
-			@WebParam(name = "arg0", targetNamespace = "") int arg0);
-
-	/**
-	 * 
-	 * @param arg0
-	 * @return returns java.lang.String
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "getControllingDeviceByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetControllingDeviceByDeviceID")
-	@ResponseWrapper(localName = "getControllingDeviceByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetControllingDeviceByDeviceIDResponse")
-	public String getControllingDeviceByDeviceID(
+	@RequestWrapper(localName = "getSensingDeviceListByProjectID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceListByProjectID")
+	@ResponseWrapper(localName = "getSensingDeviceListByProjectIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceListByProjectIDResponse")
+	public String getSensingDeviceListByProjectID(
 			@WebParam(name = "arg0", targetNamespace = "") int arg0);
 
 	/**
@@ -612,9 +624,9 @@ public interface ServiceDelegate {
 	 */
 	@WebMethod
 	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "getSensingDeviceListByProjectID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceListByProjectID")
-	@ResponseWrapper(localName = "getSensingDeviceListByProjectIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetSensingDeviceListByProjectIDResponse")
-	public String getSensingDeviceListByProjectID(
+	@RequestWrapper(localName = "getControllingDeviceByDeviceID", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetControllingDeviceByDeviceID")
+	@ResponseWrapper(localName = "getControllingDeviceByDeviceIDResponse", targetNamespace = "http://service.njupt.com/", className = "com.njupt.service.GetControllingDeviceByDeviceIDResponse")
+	public String getControllingDeviceByDeviceID(
 			@WebParam(name = "arg0", targetNamespace = "") int arg0);
 
 }

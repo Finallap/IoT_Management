@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class LoginFilter
  */
 @WebFilter(filterName="LoginFilter",urlPatterns="/*",
-initParams={@WebInitParam(name="ignoreRegex",value="Login;Register;Logout;bootstrap;build;dist;font-awesome;ionicons;plugins")})
+initParams={@WebInitParam(name="ignoreRegex",value="Login;Register;Logout;bootstrap;build;dist;font-awesome;ionicons;plugins;SensingDeviceSimulator")})
 public class LoginFilter implements Filter {
 	
 	private String ignoreRegex;
